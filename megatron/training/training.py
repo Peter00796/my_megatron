@@ -21,12 +21,12 @@ import torch
 from megatron.core import mpu, tensor_parallel
 from megatron.core.utils import check_param_hashes_across_dp_replicas, get_model_config, StragglerDetector
 
-# from dlrover.trainer.torch.flash_checkpoint.megatron_dist_ckpt import save_checkpoint
-# from dlrover.trainer.torch.flash_checkpoint.megatron_dist_ckpt import load_checkpoint
-# from dlrover.trainer.torch.flash_checkpoint.megatron import StorageType
+from dlrover.trainer.torch.flash_checkpoint.megatron_dist_ckpt import save_checkpoint
+from dlrover.trainer.torch.flash_checkpoint.megatron_dist_ckpt import load_checkpoint
+from dlrover.trainer.torch.flash_checkpoint.megatron import StorageType
 
-from megatron.training.checkpointing import load_checkpoint
-from megatron.training.checkpointing import save_checkpoint
+# from megatron.training.checkpointing import load_checkpoint
+# from megatron.training.checkpointing import save_checkpoint
 
 from megatron.legacy.model import Float16Module
 from megatron.core.distributed import DistributedDataParallelConfig

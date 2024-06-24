@@ -12,10 +12,10 @@ NNODES=1
 NODE_RANK=0
 WORLD_SIZE=$(($GPUS_PER_NODE*$NNODES))
 
-CHECKPOINT_PATH=/mnt/pengyanxin/Megatron-LM/checkpoints
-VOCAB_FILE=/mnt/pengyanxin/Megatron-LM/gpt_data/gpt2-vocab.json
-MERGE_FILE=/mnt/pengyanxin/Megatron-LM/gpt_data/gpt2-merges.txt
-DATA_PATH=/mnt/pengyanxin/Megatron-LM/gpt_data/my-gpt2_text_document
+CHECKPOINT_PATH=/mnt/pengyanxin/mdl/my_megatron/checkpoints
+VOCAB_FILE=/mnt/pengyanxin/mdl/my_megatron/gpt_data/gpt2-vocab.json
+MERGE_FILE=//mnt/pengyanxin/mdl/my_megatron/gpt_data/gpt2-merges.txt
+DATA_PATH=/mnt/pengyanxin/mdl/my_megatron/gpt_data/my-gpt2_text_document
 
 DISTRIBUTED_ARGS="
     --nproc_per_node $GPUS_PER_NODE \
