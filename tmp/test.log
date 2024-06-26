@@ -1,0 +1,942 @@
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.3.self_attention.dense.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.2.post_attention_norm.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.input_norm.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.word_embeddings.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.4.post_attention_norm.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.2.self_attention.query_key_value.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.1.mlp.dense_h_to_4h.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.mlp.dense_4h_to_h.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.final_norm.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.3.mlp.dense_4h_to_h.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.3.self_attention.query_key_value.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.2.post_attention_norm.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.4.mlp.dense_4h_to_h.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.2.mlp.dense_4h_to_h.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.mlp.dense_4h_to_h.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.self_attention.dense.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.self_attention.query_key_value.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.4.self_attention.dense.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.2.mlp.dense_h_to_4h.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.1.mlp.dense_4h_to_h.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.1.input_norm.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.4.self_attention.query_key_value.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.3.mlp.dense_h_to_4h.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.2.input_norm.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.mlp.dense_h_to_4h.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.self_attention.dense.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.5.mlp.dense_4h_to_h.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.5.post_attention_norm.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.3.input_norm.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.final_norm.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.1.post_attention_norm.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.1.self_attention.dense.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.post_attention_norm.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.1.post_attention_norm.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.1.mlp.dense_4h_to_h.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.5.self_attention.dense.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.5.self_attention.query_key_value.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.5.self_attention.query_key_value.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.4.post_attention_norm.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.3.mlp.dense_h_to_4h.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.3.self_attention.query_key_value.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.self_attention.query_key_value.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.post_attention_norm.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.mlp.dense_h_to_4h.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.5.mlp.dense_h_to_4h.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.3.post_attention_norm.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.2.mlp.dense_4h_to_h.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.2.self_attention.dense.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.2.self_attention.dense.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.1.self_attention.dense.weight
+2024-06-25 16:01:55  > learning rate decay style: cosine
+2024-06-25 16:01:55  [2024-06-25 16:01:55,350] [INFO] [engine.py:44:_local_rank0_log] Use the default process group to sync when saving checkpoint.
+2024-06-25 16:01:55  [2024-06-25 16:01:55,359] [INFO] [ckpt_saver.py:467:__init__] Initialize the AsyncSaver with arguments: checkpoint_dir=/mnt/pengyanxin/mdl/my_megatron/checkpoints, local_shard_num=4, global_shard_num=4, 
+2024-06-25 16:01:55  [2024-06-25 16:01:55,360] [INFO] [ckpt_saver.py:590:_sync_shm_to_storage] Async flash checkpoint saver starts!
+2024-06-25 16:01:57  [2024-06-25 16:01:56,352] [INFO] [ckpt_saver.py:594:_sync_shm_to_storage] Reset the shared memory after the training starts. The number of global shards is 4.
+2024-06-25 16:01:57  WARNING: could not find the metadata file /mnt/pengyanxin/mdl/my_megatron/checkpoints/latest_checkpointed_iteration.txt 
+2024-06-25 16:01:57      will not load any checkpoints and will start from random
+2024-06-25 16:01:57  (min, max) time across ranks (ms):
+2024-06-25 16:01:57      load-checkpoint ................................: (1020.46, 1020.59)
+2024-06-25 16:01:57  [after model, optimizer, and learning rate scheduler are built] datetime: 2024-06-25 16:01:56 
+2024-06-25 16:01:57  > building train, validation, and test datasets ...
+2024-06-25 16:01:57   > datasets target sizes (minimum size):
+2024-06-25 16:01:57      train:      8000000
+2024-06-25 16:01:57      validation: 8000160
+2024-06-25 16:01:57      test:       160
+2024-06-25 16:01:57  INFO:megatron.core.datasets.blended_megatron_dataset_config:mock = False
+2024-06-25 16:01:57  INFO:megatron.core.datasets.blended_megatron_dataset_config:Let split_matrix = [(0, 0.949), (0.949, 0.999), (0.999, 1.0)]
+2024-06-25 16:01:57  > building train, validation, and test datasets for GPT ...
+2024-06-25 16:01:57  INFO:megatron.core.datasets.indexed_dataset:Load the _IndexReader from /mnt/pengyanxin/mdl/my_megatron/gpt_data/my-gpt2_text_document.idx
+2024-06-25 16:01:57  INFO:megatron.core.datasets.indexed_dataset:	Extract the sequence lengths
+2024-06-25 16:01:57  INFO:megatron.core.datasets.indexed_dataset:	Extract the sequence pointers
+2024-06-25 16:01:57  INFO:megatron.core.datasets.indexed_dataset:	Extract the document indices
+2024-06-25 16:01:57  INFO:megatron.core.datasets.indexed_dataset:> total number of sequences: 250000
+2024-06-25 16:01:57  INFO:megatron.core.datasets.indexed_dataset:> total number of documents: 250000
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:Load the GPTDataset train indices
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:	Load the document index from 0145c654e92ca34301c31ed11bdfbe67-GPTDataset-document_index.npy
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:	Load the sample index from 0145c654e92ca34301c31ed11bdfbe67-GPTDataset-sample_index.npy
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:	Load the shuffle index from 0145c654e92ca34301c31ed11bdfbe67-GPTDataset-shuffle_index.npy
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:> total number of samples: 8011443
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:> total number of epochs: 59
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:Load the GPTDataset valid indices
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:	Load the document index from 8bba8f4b08ba8a4f4a804677f7606486-GPTDataset-document_index.npy
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:	Load the sample index from 8bba8f4b08ba8a4f4a804677f7606486-GPTDataset-sample_index.npy
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:	Load the shuffle index from 8bba8f4b08ba8a4f4a804677f7606486-GPTDataset-shuffle_index.npy
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:> total number of samples: 8001159
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:> total number of epochs: 1111
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:Load the GPTDataset test indices
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:	Load the document index from 5259cdb913ecb5247653a066616ce708-GPTDataset-document_index.npy
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:	Load the sample index from 5259cdb913ecb5247653a066616ce708-GPTDataset-sample_index.npy
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:	Load the shuffle index from 5259cdb913ecb5247653a066616ce708-GPTDataset-shuffle_index.npy
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:> total number of samples: 301
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:> total number of epochs: 2
+2024-06-25 16:01:57  > finished creating GPT datasets ...
+2024-06-25 16:01:57  [after dataloaders are built] datetime: 2024-06-25 16:01:56 
+2024-06-25 16:01:57  done with setup ...
+2024-06-25 16:01:57  (min, max) time across ranks (ms):
+2024-06-25 16:01:57      model-and-optimizer-setup ......................: (2121.28, 2144.62)
+2024-06-25 16:01:57      train/valid/test-data-iterators-setup ..........: (131.62, 260.10)
+2024-06-25 16:01:57  training ...
+2024-06-25 16:01:57  [before the start of training step] datetime: 2024-06-25 16:01:56 
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.3.self_attention.dense.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.2.post_attention_norm.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.input_norm.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.word_embeddings.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.4.post_attention_norm.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.2.self_attention.query_key_value.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.1.mlp.dense_h_to_4h.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.mlp.dense_4h_to_h.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.final_norm.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.3.mlp.dense_4h_to_h.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.3.self_attention.query_key_value.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.2.post_attention_norm.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.4.mlp.dense_4h_to_h.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.2.mlp.dense_4h_to_h.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.mlp.dense_4h_to_h.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.self_attention.dense.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.self_attention.query_key_value.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.4.self_attention.dense.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.2.mlp.dense_h_to_4h.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.1.mlp.dense_4h_to_h.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.1.input_norm.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.4.self_attention.query_key_value.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.3.mlp.dense_h_to_4h.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.2.input_norm.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.mlp.dense_h_to_4h.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.self_attention.dense.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.5.mlp.dense_4h_to_h.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.5.post_attention_norm.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.3.input_norm.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.final_norm.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.1.post_attention_norm.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.1.self_attention.dense.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.post_attention_norm.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.1.post_attention_norm.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.1.mlp.dense_4h_to_h.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.5.self_attention.dense.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.5.self_attention.query_key_value.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.5.self_attention.query_key_value.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.4.post_attention_norm.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.3.mlp.dense_h_to_4h.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.3.self_attention.query_key_value.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.self_attention.query_key_value.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.post_attention_norm.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.0.mlp.dense_h_to_4h.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.5.mlp.dense_h_to_4h.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.3.post_attention_norm.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.2.mlp.dense_4h_to_h.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.2.self_attention.dense.bias
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.2.self_attention.dense.weight
+2024-06-25 16:01:55  INFO:megatron.core.distributed.grad_buffer:    module.language_model.encoder.layers.1.self_attention.dense.weight
+2024-06-25 16:01:55  > learning rate decay style: cosine
+2024-06-25 16:01:55  [2024-06-25 16:01:55,350] [INFO] [engine.py:44:_local_rank0_log] Use the default process group to sync when saving checkpoint.
+2024-06-25 16:01:55  [2024-06-25 16:01:55,359] [INFO] [ckpt_saver.py:467:__init__] Initialize the AsyncSaver with arguments: checkpoint_dir=/mnt/pengyanxin/mdl/my_megatron/checkpoints, local_shard_num=4, global_shard_num=4, 
+2024-06-25 16:01:55  [2024-06-25 16:01:55,360] [INFO] [ckpt_saver.py:590:_sync_shm_to_storage] Async flash checkpoint saver starts!
+2024-06-25 16:01:57  [2024-06-25 16:01:56,352] [INFO] [ckpt_saver.py:594:_sync_shm_to_storage] Reset the shared memory after the training starts. The number of global shards is 4.
+2024-06-25 16:01:57  WARNING: could not find the metadata file /mnt/pengyanxin/mdl/my_megatron/checkpoints/latest_checkpointed_iteration.txt 
+2024-06-25 16:01:57      will not load any checkpoints and will start from random
+2024-06-25 16:01:57  (min, max) time across ranks (ms):
+2024-06-25 16:01:57      load-checkpoint ................................: (1020.46, 1020.59)
+2024-06-25 16:01:57  [after model, optimizer, and learning rate scheduler are built] datetime: 2024-06-25 16:01:56 
+2024-06-25 16:01:57  > building train, validation, and test datasets ...
+2024-06-25 16:01:57   > datasets target sizes (minimum size):
+2024-06-25 16:01:57      train:      8000000
+2024-06-25 16:01:57      validation: 8000160
+2024-06-25 16:01:57      test:       160
+2024-06-25 16:01:57  INFO:megatron.core.datasets.blended_megatron_dataset_config:mock = False
+2024-06-25 16:01:57  INFO:megatron.core.datasets.blended_megatron_dataset_config:Let split_matrix = [(0, 0.949), (0.949, 0.999), (0.999, 1.0)]
+2024-06-25 16:01:57  > building train, validation, and test datasets for GPT ...
+2024-06-25 16:01:57  INFO:megatron.core.datasets.indexed_dataset:Load the _IndexReader from /mnt/pengyanxin/mdl/my_megatron/gpt_data/my-gpt2_text_document.idx
+2024-06-25 16:01:57  INFO:megatron.core.datasets.indexed_dataset:	Extract the sequence lengths
+2024-06-25 16:01:57  INFO:megatron.core.datasets.indexed_dataset:	Extract the sequence pointers
+2024-06-25 16:01:57  INFO:megatron.core.datasets.indexed_dataset:	Extract the document indices
+2024-06-25 16:01:57  INFO:megatron.core.datasets.indexed_dataset:> total number of sequences: 250000
+2024-06-25 16:01:57  INFO:megatron.core.datasets.indexed_dataset:> total number of documents: 250000
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:Load the GPTDataset train indices
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:	Load the document index from 0145c654e92ca34301c31ed11bdfbe67-GPTDataset-document_index.npy
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:	Load the sample index from 0145c654e92ca34301c31ed11bdfbe67-GPTDataset-sample_index.npy
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:	Load the shuffle index from 0145c654e92ca34301c31ed11bdfbe67-GPTDataset-shuffle_index.npy
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:> total number of samples: 8011443
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:> total number of epochs: 59
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:Load the GPTDataset valid indices
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:	Load the document index from 8bba8f4b08ba8a4f4a804677f7606486-GPTDataset-document_index.npy
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:	Load the sample index from 8bba8f4b08ba8a4f4a804677f7606486-GPTDataset-sample_index.npy
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:	Load the shuffle index from 8bba8f4b08ba8a4f4a804677f7606486-GPTDataset-shuffle_index.npy
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:> total number of samples: 8001159
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:> total number of epochs: 1111
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:Load the GPTDataset test indices
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:	Load the document index from 5259cdb913ecb5247653a066616ce708-GPTDataset-document_index.npy
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:	Load the sample index from 5259cdb913ecb5247653a066616ce708-GPTDataset-sample_index.npy
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:	Load the shuffle index from 5259cdb913ecb5247653a066616ce708-GPTDataset-shuffle_index.npy
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:> total number of samples: 301
+2024-06-25 16:01:57  INFO:megatron.core.datasets.gpt_dataset:> total number of epochs: 2
+2024-06-25 16:01:57  > finished creating GPT datasets ...
+2024-06-25 16:01:57  [after dataloaders are built] datetime: 2024-06-25 16:01:56 
+2024-06-25 16:01:57  done with setup ...
+2024-06-25 16:01:57  (min, max) time across ranks (ms):
+2024-06-25 16:01:57      model-and-optimizer-setup ......................: (2121.28, 2144.62)
+2024-06-25 16:01:57      train/valid/test-data-iterators-setup ..........: (131.62, 260.10)
+2024-06-25 16:01:57  training ...
+2024-06-25 16:01:57  [before the start of training step] datetime: 2024-06-25 16:01:56 
+2024-06-25 16:02:15   iteration       10/  500000 | consumed samples:          160 | elapsed time per iteration (ms): 1772.9 | learning rate: 0.000E+00 | global batch size:    16 | loss scale: 8388608.0 | number of skipped iterations:  10 | number of nan iterations:   0 |
+2024-06-25 16:02:19  (min, max) time across ranks (ms):
+2024-06-25 16:02:19      evaluate .......................................: (3418.01, 3564.39)
+2024-06-25 16:02:19  ----------------------------------------------------------------------------------------------
+2024-06-25 16:02:19   validation loss at iteration 10 | lm loss value: 1.104137E+01 | lm loss PPL: 6.240281E+04 | 
+2024-06-25 16:02:19  ----------------------------------------------------------------------------------------------
+2024-06-25 16:02:22   iteration       20/  500000 | consumed samples:          320 | elapsed time per iteration (ms): 289.4 | learning rate: 2.344E-07 | global batch size:    16 | lm loss: 1.103607E+01 | loss scale: 262144.0 | grad norm: 23.838 | number of skipped iterations:   5 | number of nan iterations:   0 |
+2024-06-25 16:02:22  [Rank 2] (after 20 iterations) memory (MB) | allocated: 1601.77783203125 | max allocated: 6922.232421875 | reserved: 7146.0 | max reserved: 7146.0[Rank 0] (after 20 iterations) memory (MB) | allocated: 2588.27783203125 | max allocated: 13205.7333984375 | reserved: 13422.0 | max reserved: 13422.0
+2024-06-25 16:02:22  
+2024-06-25 16:02:22  [Rank 1] (after 20 iterations) memory (MB) | allocated: 1601.77783203125 | max allocated: 9658.60791015625 | reserved: 9882.0 | max reserved: 9882.0
+2024-06-25 16:02:22  [Rank 3] (after 20 iterations) memory (MB) | allocated: 2585.31787109375 | max allocated: 6822.69873046875 | reserved: 7468.0 | max reserved: 7468.0
+2024-06-25 16:02:22  (min, max) time across ranks (ms):
+2024-06-25 16:02:22      evaluate .......................................: (501.39, 644.05)
+2024-06-25 16:02:22  ----------------------------------------------------------------------------------------------
+2024-06-25 16:02:22   validation loss at iteration 20 | lm loss value: 1.101324E+01 | lm loss PPL: 6.067225E+04 | 
+2024-06-25 16:02:22  ----------------------------------------------------------------------------------------------
+2024-06-25 16:02:25   iteration       30/  500000 | consumed samples:          480 | elapsed time per iteration (ms): 289.7 | learning rate: 7.031E-07 | global batch size:    16 | lm loss: 1.076502E+01 | loss scale: 262144.0 | grad norm: 19.115 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:02:25  (min, max) time across ranks (ms):
+2024-06-25 16:02:25      evaluate .......................................: (498.68, 640.77)
+2024-06-25 16:02:25  ----------------------------------------------------------------------------------------------
+2024-06-25 16:02:25   validation loss at iteration 30 | lm loss value: 1.033862E+01 | lm loss PPL: 3.090330E+04 | 
+2024-06-25 16:02:25  ----------------------------------------------------------------------------------------------
+2024-06-25 16:02:29   iteration       40/  500000 | consumed samples:          640 | elapsed time per iteration (ms): 294.4 | learning rate: 1.172E-06 | global batch size:    16 | lm loss: 1.011536E+01 | loss scale: 262144.0 | grad norm: 8.462 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:02:29  (min, max) time across ranks (ms):
+2024-06-25 16:02:29      evaluate .......................................: (510.60, 653.52)
+2024-06-25 16:02:29  ----------------------------------------------------------------------------------------------
+2024-06-25 16:02:29   validation loss at iteration 40 | lm loss value: 9.722038E+00 | lm loss PPL: 1.668121E+04 | 
+2024-06-25 16:02:29  ----------------------------------------------------------------------------------------------
+2024-06-25 16:02:33   iteration       50/  500000 | consumed samples:          800 | elapsed time per iteration (ms): 298.0 | learning rate: 1.641E-06 | global batch size:    16 | lm loss: 9.636192E+00 | loss scale: 262144.0 | grad norm: 4.519 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:02:33  (min, max) time across ranks (ms):
+2024-06-25 16:02:33      evaluate .......................................: (496.08, 640.62)
+2024-06-25 16:02:33  ----------------------------------------------------------------------------------------------
+2024-06-25 16:02:33   validation loss at iteration 50 | lm loss value: 9.427266E+00 | lm loss PPL: 1.242252E+04 | 
+2024-06-25 16:02:33  ----------------------------------------------------------------------------------------------
+2024-06-25 16:02:33  saving checkpoint at iteration      50 to /mnt/pengyanxin/mdl/my_megatron/checkpoints
+2024-06-25 16:02:33  [2024-06-25 16:02:32,297] [INFO] [engine.py:303:save_state_dict_to_memory] 3 acquired the lock of shared memory: True.
+2024-06-25 16:02:33  [2024-06-25 16:02:32,297] [INFO] [engine.py:303:save_state_dict_to_memory] 2 acquired the lock of shared memory: True.
+2024-06-25 16:02:33  [2024-06-25 16:02:32,300] [INFO] [engine.py:303:save_state_dict_to_memory] 0 acquired the lock of shared memory: True.
+2024-06-25 16:02:33  [2024-06-25 16:02:32,300] [INFO] [engine.py:303:save_state_dict_to_memory] 1 acquired the lock of shared memory: True.
+2024-06-25 16:02:33  [2024-06-25 16:02:32,303] [INFO] [ckpt_saver.py:260:create_checkpoint] rank 2 size of the checkpoint_dict is 0
+2024-06-25 16:02:33  [2024-06-25 16:02:32,303] [INFO] [ckpt_saver.py:261:create_checkpoint] rank 2 self._buffer_size is 1058087940 
+2024-06-25 16:02:33  [2024-06-25 16:02:32,303] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 2 is creating checkpoint at iteration 50, offset: 0
+2024-06-25 16:02:33  [2024-06-25 16:02:32,303] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 2 Current checkpoints: [50]
+2024-06-25 16:02:33  [2024-06-25 16:02:32,303] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 2 starting to set checkpoints
+2024-06-25 16:02:33  [2024-06-25 16:02:32,304] [INFO] [ckpt_saver.py:260:create_checkpoint] rank 3 size of the checkpoint_dict is 0
+2024-06-25 16:02:33  [2024-06-25 16:02:32,304] [INFO] [ckpt_saver.py:261:create_checkpoint] rank 3 self._buffer_size is 1779274756 
+2024-06-25 16:02:33  [2024-06-25 16:02:32,304] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 3 is creating checkpoint at iteration 50, offset: 0
+2024-06-25 16:02:33  [2024-06-25 16:02:32,304] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 3 Current checkpoints: [50]
+2024-06-25 16:02:33  [2024-06-25 16:02:32,304] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 3 starting to set checkpoints
+2024-06-25 16:02:33  [2024-06-25 16:02:32,304] [INFO] [ckpt_saver.py:260:create_checkpoint] rank 0 size of the checkpoint_dict is 0
+2024-06-25 16:02:33  [2024-06-25 16:02:32,304] [INFO] [ckpt_saver.py:261:create_checkpoint] rank 0 self._buffer_size is 1793926148 
+2024-06-25 16:02:33  [2024-06-25 16:02:32,304] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 0 is creating checkpoint at iteration 50, offset: 0
+2024-06-25 16:02:33  [2024-06-25 16:02:32,304] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 0 Current checkpoints: [50]
+2024-06-25 16:02:33  [2024-06-25 16:02:32,304] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 0 starting to set checkpoints
+2024-06-25 16:02:33  [2024-06-25 16:02:32,306] [INFO] [ckpt_saver.py:260:create_checkpoint] rank 1 size of the checkpoint_dict is 0
+2024-06-25 16:02:33  [2024-06-25 16:02:32,306] [INFO] [ckpt_saver.py:261:create_checkpoint] rank 1 self._buffer_size is 1058087940 
+2024-06-25 16:02:33  [2024-06-25 16:02:32,306] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 1 is creating checkpoint at iteration 50, offset: 0
+2024-06-25 16:02:33  [2024-06-25 16:02:32,306] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 1 Current checkpoints: [50]
+2024-06-25 16:02:33  [2024-06-25 16:02:32,306] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 1 starting to set checkpoints
+2024-06-25 16:02:33  WARNING:megatron.core.dist_checkpointing.strategies:Zarr-based strategies will not be registered because of missing packages
+2024-06-25 16:02:33  [2024-06-25 16:02:33,453] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 2 set checkpoints done
+2024-06-25 16:02:33  [2024-06-25 16:02:33,453] [INFO] [ckpt_saver.py:329:save_state_dict] rank 2 buffer size is 1058087940, is initiating shared memory
+2024-06-25 16:02:33  [2024-06-25 16:02:33,454] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 3 set checkpoints done
+2024-06-25 16:02:33  [2024-06-25 16:02:33,455] [INFO] [ckpt_saver.py:329:save_state_dict] rank 3 buffer size is 1779274756, is initiating shared memory
+2024-06-25 16:02:33  [2024-06-25 16:02:33,457] [INFO] [ckpt_saver.py:337:save_state_dict] rank 2 shared memory buffer size is 3174263820
+2024-06-25 16:02:33  [2024-06-25 16:02:33,458] [INFO] [ckpt_saver.py:337:save_state_dict] rank 3 shared memory buffer size is 5337824268
+2024-06-25 16:02:33  [2024-06-25 16:02:33,462] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 0 set checkpoints done
+2024-06-25 16:02:33  [2024-06-25 16:02:33,462] [INFO] [ckpt_saver.py:329:save_state_dict] rank 0 buffer size is 1793926148, is initiating shared memory
+2024-06-25 16:02:33  [2024-06-25 16:02:33,464] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 1 set checkpoints done
+2024-06-25 16:02:33  [2024-06-25 16:02:33,464] [INFO] [ckpt_saver.py:329:save_state_dict] rank 1 buffer size is 1058087940, is initiating shared memory
+2024-06-25 16:02:33  [2024-06-25 16:02:33,465] [INFO] [ckpt_saver.py:337:save_state_dict] rank 0 shared memory buffer size is 5381778444
+2024-06-25 16:02:33  [2024-06-25 16:02:33,467] [INFO] [ckpt_saver.py:337:save_state_dict] rank 1 shared memory buffer size is 3174263820
+2024-06-25 16:02:35  [2024-06-25 16:02:34,259] [INFO] [engine.py:99:wrapper] Local rank 2 execute save_to_memory in 1.963s.
+2024-06-25 16:02:35  [2024-06-25 16:02:34,262] [INFO] [engine.py:99:wrapper] Local rank 1 execute save_to_memory in 1.962s.
+2024-06-25 16:02:35  [2024-06-25 16:02:34,587] [INFO] [engine.py:99:wrapper] Local rank 3 execute save_to_memory in 2.29s.
+2024-06-25 16:02:35  [2024-06-25 16:02:34,625] [INFO] [engine.py:99:wrapper] Local rank 0 execute save_to_memory in 2.326s.
+2024-06-25 16:02:35  [2024-06-25 16:02:34,626] [INFO] [engine.py:99:wrapper] Local rank 3 execute save_to_storage in 2.329s.
+2024-06-25 16:02:35  [2024-06-25 16:02:34,626] [INFO] [engine.py:99:wrapper] Local rank 2 execute save_to_storage in 2.329s.
+2024-06-25 16:02:35  [2024-06-25 16:02:34,626] [INFO] [engine.py:99:wrapper] Local rank 0 execute save_to_storage in 2.327s.
+2024-06-25 16:02:35  [2024-06-25 16:02:34,626] [INFO] [engine.py:99:wrapper] Local rank 1 execute save_to_storage in 2.327s.
+2024-06-25 16:02:35  [2024-06-25 16:02:34,626] [INFO] [ckpt_saver.py:600:_sync_shm_to_storage] ShardingSaver save checkpoint to storage, event CheckpointEvent(type=<CheckpointEventType.SAVE: 1>, step=50, global_shard_num=0)
+2024-06-25 16:02:35  (min, max) time across ranks (ms):
+2024-06-25 16:02:35      save-checkpoint ................................: (2332.61, 2332.83)
+2024-06-25 16:02:35  [2024-06-25 16:02:34,630] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 0 from the shared memory into the storage CheckpointConfig(rank=0, group_rank=0, world_size=4, step=50, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000050/mp_rank_00_000/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000050/rank_00000/distrib_optim.pt'}).
+2024-06-25 16:02:35  [2024-06-25 16:02:34,631] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 1 from the shared memory into the storage CheckpointConfig(rank=1, group_rank=0, world_size=4, step=50, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000050/mp_rank_00_001/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000050/rank_00001/distrib_optim.pt'}).
+2024-06-25 16:02:35  [2024-06-25 16:02:34,631] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 2 from the shared memory into the storage CheckpointConfig(rank=2, group_rank=0, world_size=4, step=50, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000050/mp_rank_00_002/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000050/rank_00002/distrib_optim.pt'}).
+2024-06-25 16:02:35  [2024-06-25 16:02:34,632] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 3 from the shared memory into the storage CheckpointConfig(rank=3, group_rank=0, world_size=4, step=50, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000050/mp_rank_00_003/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000050/rank_00003/distrib_optim.pt'}).
+2024-06-25 16:02:35  [2024-06-25 16:02:34,632] [INFO] [ckpt_saver.py:366:load_state_dict]  rank 1 Loading checkpoint at step 50, config: CheckpointConfig(rank=1, group_rank=0, world_size=4, step=50, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000050/mp_rank_00_001/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000050/rank_00001/distrib_optim.pt'})
+2024-06-25 16:02:35  [2024-06-25 16:02:34,632] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 0.
+2024-06-25 16:02:35  [2024-06-25 16:02:34,633] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 1.
+2024-06-25 16:02:35  [2024-06-25 16:02:34,634] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 2.
+2024-06-25 16:02:35  [2024-06-25 16:02:35,295] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 3.
+2024-06-25 16:02:35  [2024-06-25 16:02:35,296] [INFO] [ckpt_saver.py:955:commit_checkpoint] All agents finish saving checkpoint for step 50
+2024-06-25 16:02:35  [2024-06-25 16:02:35,300] [INFO] [storage.py:171:commit] Succeed True in persisting the checkpoint of step 50.
+2024-06-25 16:02:39   iteration       60/  500000 | consumed samples:          960 | elapsed time per iteration (ms): 300.4 | learning rate: 2.109E-06 | global batch size:    16 | lm loss: 9.405913E+00 | loss scale: 262144.0 | grad norm: 3.055 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:02:39  (min, max) time across ranks (ms):
+2024-06-25 16:02:39      evaluate .......................................: (514.98, 655.03)
+2024-06-25 16:02:39  ----------------------------------------------------------------------------------------------
+2024-06-25 16:02:39   validation loss at iteration 60 | lm loss value: 9.298903E+00 | lm loss PPL: 1.092602E+04 | 
+2024-06-25 16:02:39  ----------------------------------------------------------------------------------------------
+2024-06-25 16:02:42   iteration       70/  500000 | consumed samples:         1120 | elapsed time per iteration (ms): 300.5 | learning rate: 2.578E-06 | global batch size:    16 | lm loss: 9.301163E+00 | loss scale: 262144.0 | grad norm: 2.622 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:02:42  (min, max) time across ranks (ms):
+2024-06-25 16:02:42      evaluate .......................................: (509.20, 649.46)
+2024-06-25 16:02:42  ----------------------------------------------------------------------------------------------
+2024-06-25 16:02:42   validation loss at iteration 70 | lm loss value: 9.241061E+00 | lm loss PPL: 1.031198E+04 | 
+2024-06-25 16:02:42  ----------------------------------------------------------------------------------------------
+2024-06-25 16:02:46   iteration       80/  500000 | consumed samples:         1280 | elapsed time per iteration (ms): 295.6 | learning rate: 3.047E-06 | global batch size:    16 | lm loss: 9.181758E+00 | loss scale: 262144.0 | grad norm: 2.412 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:02:46  (min, max) time across ranks (ms):
+2024-06-25 16:02:46      evaluate .......................................: (507.05, 646.71)
+2024-06-25 16:02:46  ----------------------------------------------------------------------------------------------
+2024-06-25 16:02:46   validation loss at iteration 80 | lm loss value: 9.174323E+00 | lm loss PPL: 9.646236E+03 | 
+2024-06-25 16:02:46  ----------------------------------------------------------------------------------------------
+2024-06-25 16:02:49   iteration       90/  500000 | consumed samples:         1440 | elapsed time per iteration (ms): 298.7 | learning rate: 3.516E-06 | global batch size:    16 | lm loss: 9.159846E+00 | loss scale: 262144.0 | grad norm: 2.569 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:02:49  (min, max) time across ranks (ms):
+2024-06-25 16:02:49      evaluate .......................................: (505.24, 648.42)
+2024-06-25 16:02:49  ----------------------------------------------------------------------------------------------
+2024-06-25 16:02:49   validation loss at iteration 90 | lm loss value: 9.112471E+00 | lm loss PPL: 9.067670E+03 | 
+2024-06-25 16:02:49  ----------------------------------------------------------------------------------------------
+2024-06-25 16:02:53   iteration      100/  500000 | consumed samples:         1600 | elapsed time per iteration (ms): 305.6 | learning rate: 3.984E-06 | global batch size:    16 | lm loss: 9.097723E+00 | loss scale: 262144.0 | grad norm: 2.636 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:02:53  (min, max) time across ranks (ms):
+2024-06-25 16:02:53      evaluate .......................................: (510.31, 647.47)
+2024-06-25 16:02:53  -----------------------------------------------------------------------------------------------
+2024-06-25 16:02:53   validation loss at iteration 100 | lm loss value: 9.025447E+00 | lm loss PPL: 8.311928E+03 | 
+2024-06-25 16:02:53  -----------------------------------------------------------------------------------------------
+2024-06-25 16:02:53  saving checkpoint at iteration     100 to /mnt/pengyanxin/mdl/my_megatron/checkpoints
+2024-06-25 16:02:53  [2024-06-25 16:02:52,893] [INFO] [engine.py:303:save_state_dict_to_memory] 2 acquired the lock of shared memory: True.
+2024-06-25 16:02:53  [2024-06-25 16:02:52,893] [INFO] [engine.py:303:save_state_dict_to_memory] 3 acquired the lock of shared memory: True.
+2024-06-25 16:02:53  [2024-06-25 16:02:52,894] [INFO] [engine.py:303:save_state_dict_to_memory] 0 acquired the lock of shared memory: True.
+2024-06-25 16:02:53  [2024-06-25 16:02:52,896] [INFO] [engine.py:303:save_state_dict_to_memory] 1 acquired the lock of shared memory: True.
+2024-06-25 16:02:53  [2024-06-25 16:02:52,899] [INFO] [ckpt_saver.py:260:create_checkpoint] rank 2 size of the checkpoint_dict is 1
+2024-06-25 16:02:53  [2024-06-25 16:02:52,899] [INFO] [ckpt_saver.py:260:create_checkpoint] rank 0 size of the checkpoint_dict is 1
+2024-06-25 16:02:53  [2024-06-25 16:02:52,899] [INFO] [ckpt_saver.py:261:create_checkpoint] rank 2 self._buffer_size is 2116175880 
+2024-06-25 16:02:53  [2024-06-25 16:02:52,899] [INFO] [ckpt_saver.py:260:create_checkpoint] rank 3 size of the checkpoint_dict is 1
+2024-06-25 16:02:53  [2024-06-25 16:02:52,899] [INFO] [ckpt_saver.py:261:create_checkpoint] rank 0 self._buffer_size is 3587852296 
+2024-06-25 16:02:53  [2024-06-25 16:02:52,899] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 2 is creating checkpoint at iteration 100, offset: 1058087940
+2024-06-25 16:02:53  [2024-06-25 16:02:52,899] [INFO] [ckpt_saver.py:261:create_checkpoint] rank 3 self._buffer_size is 3558549512 
+2024-06-25 16:02:53  [2024-06-25 16:02:52,899] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 0 is creating checkpoint at iteration 100, offset: 1793926148
+2024-06-25 16:02:53  [2024-06-25 16:02:52,899] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 2 Current checkpoints: [50, 100]
+2024-06-25 16:02:53  [2024-06-25 16:02:52,899] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 3 is creating checkpoint at iteration 100, offset: 1779274756
+2024-06-25 16:02:53  [2024-06-25 16:02:52,899] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 2 starting to set checkpoints
+2024-06-25 16:02:53  [2024-06-25 16:02:52,899] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 0 Current checkpoints: [50, 100]
+2024-06-25 16:02:53  [2024-06-25 16:02:52,899] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 0 starting to set checkpoints
+2024-06-25 16:02:53  [2024-06-25 16:02:52,899] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 3 Current checkpoints: [50, 100]
+2024-06-25 16:02:53  [2024-06-25 16:02:52,899] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 3 starting to set checkpoints
+2024-06-25 16:02:53  [2024-06-25 16:02:52,899] [INFO] [ckpt_saver.py:260:create_checkpoint] rank 1 size of the checkpoint_dict is 1
+2024-06-25 16:02:53  [2024-06-25 16:02:52,899] [INFO] [ckpt_saver.py:261:create_checkpoint] rank 1 self._buffer_size is 2116175880 
+2024-06-25 16:02:53  [2024-06-25 16:02:52,899] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 1 is creating checkpoint at iteration 100, offset: 1058087940
+2024-06-25 16:02:53  [2024-06-25 16:02:52,899] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 1 Current checkpoints: [50, 100]
+2024-06-25 16:02:53  [2024-06-25 16:02:52,899] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 1 starting to set checkpoints
+2024-06-25 16:02:53  [2024-06-25 16:02:52,901] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 2 set checkpoints done
+2024-06-25 16:02:53  [2024-06-25 16:02:52,903] [INFO] [ckpt_saver.py:337:save_state_dict] rank 2 shared memory buffer size is 3174263820
+2024-06-25 16:02:53  [2024-06-25 16:02:52,905] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 0 set checkpoints done
+2024-06-25 16:02:53  [2024-06-25 16:02:52,907] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 3 set checkpoints done
+2024-06-25 16:02:53  [2024-06-25 16:02:52,910] [INFO] [ckpt_saver.py:337:save_state_dict] rank 0 shared memory buffer size is 5381778444
+2024-06-25 16:02:53  [2024-06-25 16:02:52,912] [INFO] [ckpt_saver.py:337:save_state_dict] rank 3 shared memory buffer size is 5337824268
+2024-06-25 16:02:53  [2024-06-25 16:02:52,913] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 1 set checkpoints done
+2024-06-25 16:02:53  [2024-06-25 16:02:52,916] [INFO] [ckpt_saver.py:337:save_state_dict] rank 1 shared memory buffer size is 3174263820
+2024-06-25 16:02:55  [2024-06-25 16:02:53,609] [INFO] [engine.py:99:wrapper] Local rank 2 execute save_to_memory in 0.717s.
+2024-06-25 16:02:55  [2024-06-25 16:02:53,613] [INFO] [engine.py:99:wrapper] Local rank 1 execute save_to_memory in 0.718s.
+2024-06-25 16:02:55  [2024-06-25 16:02:54,066] [INFO] [engine.py:99:wrapper] Local rank 0 execute save_to_memory in 1.173s.
+2024-06-25 16:02:55  [2024-06-25 16:02:54,069] [INFO] [engine.py:99:wrapper] Local rank 3 execute save_to_memory in 1.177s.
+2024-06-25 16:02:55  [2024-06-25 16:02:54,069] [INFO] [engine.py:99:wrapper] Local rank 3 execute save_to_storage in 1.177s.
+2024-06-25 16:02:55  [2024-06-25 16:02:54,069] [INFO] [engine.py:99:wrapper] Local rank 2 execute save_to_storage in 1.177s.
+2024-06-25 16:02:55  [2024-06-25 16:02:54,069] [INFO] [engine.py:99:wrapper] Local rank 1 execute save_to_storage in 1.174s.
+2024-06-25 16:02:55  [2024-06-25 16:02:54,070] [INFO] [engine.py:99:wrapper] Local rank 0 execute save_to_storage in 1.177s.
+2024-06-25 16:02:55  [2024-06-25 16:02:54,070] [INFO] [ckpt_saver.py:600:_sync_shm_to_storage] ShardingSaver save checkpoint to storage, event CheckpointEvent(type=<CheckpointEventType.SAVE: 1>, step=100, global_shard_num=0)
+2024-06-25 16:02:55  [2024-06-25 16:02:54,071] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 0 from the shared memory into the storage CheckpointConfig(rank=0, group_rank=0, world_size=4, step=100, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000100/mp_rank_00_000/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000100/rank_00000/distrib_optim.pt'}).
+2024-06-25 16:02:55  [2024-06-25 16:02:54,071] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 1 from the shared memory into the storage CheckpointConfig(rank=1, group_rank=0, world_size=4, step=100, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000100/mp_rank_00_001/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000100/rank_00001/distrib_optim.pt'}).
+2024-06-25 16:02:55  [2024-06-25 16:02:54,072] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 2 from the shared memory into the storage CheckpointConfig(rank=2, group_rank=0, world_size=4, step=100, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000100/mp_rank_00_002/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000100/rank_00002/distrib_optim.pt'}).
+2024-06-25 16:02:55  (min, max) time across ranks (ms):
+2024-06-25 16:02:55      save-checkpoint ................................: (1179.66, 1179.94)
+2024-06-25 16:02:55  [2024-06-25 16:02:54,072] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 3 from the shared memory into the storage CheckpointConfig(rank=3, group_rank=0, world_size=4, step=100, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000100/mp_rank_00_003/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000100/rank_00003/distrib_optim.pt'}).
+2024-06-25 16:02:55  [2024-06-25 16:02:54,072] [INFO] [ckpt_saver.py:366:load_state_dict]  rank 1 Loading checkpoint at step 100, config: CheckpointConfig(rank=1, group_rank=0, world_size=4, step=100, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000100/mp_rank_00_001/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000100/rank_00001/distrib_optim.pt'})
+2024-06-25 16:02:55  [2024-06-25 16:02:54,073] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 0.
+2024-06-25 16:02:55  [2024-06-25 16:02:54,073] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 1.
+2024-06-25 16:02:55  [2024-06-25 16:02:54,074] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 2.
+2024-06-25 16:02:55  [2024-06-25 16:02:54,760] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 3.
+2024-06-25 16:02:55  [2024-06-25 16:02:54,760] [INFO] [ckpt_saver.py:955:commit_checkpoint] All agents finish saving checkpoint for step 100
+2024-06-25 16:02:55  [2024-06-25 16:02:54,763] [INFO] [storage.py:171:commit] Succeed True in persisting the checkpoint of step 100.
+2024-06-25 16:02:58   iteration      110/  500000 | consumed samples:         1760 | elapsed time per iteration (ms): 302.4 | learning rate: 4.453E-06 | global batch size:    16 | lm loss: 9.010366E+00 | loss scale: 262144.0 | grad norm: 3.290 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:02:58  (min, max) time across ranks (ms):
+2024-06-25 16:02:58      evaluate .......................................: (506.47, 644.09)
+2024-06-25 16:02:58  -----------------------------------------------------------------------------------------------
+2024-06-25 16:02:58   validation loss at iteration 110 | lm loss value: 8.953693E+00 | lm loss PPL: 7.736413E+03 | 
+2024-06-25 16:02:58  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:02   iteration      120/  500000 | consumed samples:         1920 | elapsed time per iteration (ms): 295.6 | learning rate: 4.922E-06 | global batch size:    16 | lm loss: 8.947035E+00 | loss scale: 262144.0 | grad norm: 2.101 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:03:02  (min, max) time across ranks (ms):
+2024-06-25 16:03:02      evaluate .......................................: (494.29, 629.30)
+2024-06-25 16:03:02  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:02   validation loss at iteration 120 | lm loss value: 8.850427E+00 | lm loss PPL: 6.977365E+03 | 
+2024-06-25 16:03:02  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:05   iteration      130/  500000 | consumed samples:         2080 | elapsed time per iteration (ms): 296.3 | learning rate: 5.391E-06 | global batch size:    16 | lm loss: 8.849534E+00 | loss scale: 262144.0 | grad norm: 2.213 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:03:05  (min, max) time across ranks (ms):
+2024-06-25 16:03:05      evaluate .......................................: (494.29, 629.91)
+2024-06-25 16:03:05  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:05   validation loss at iteration 130 | lm loss value: 8.792542E+00 | lm loss PPL: 6.584953E+03 | 
+2024-06-25 16:03:05  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:09   iteration      140/  500000 | consumed samples:         2240 | elapsed time per iteration (ms): 299.7 | learning rate: 5.859E-06 | global batch size:    16 | lm loss: 8.759567E+00 | loss scale: 262144.0 | grad norm: 2.084 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:03:09  (min, max) time across ranks (ms):
+2024-06-25 16:03:09      evaluate .......................................: (488.76, 622.13)
+2024-06-25 16:03:09  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:09   validation loss at iteration 140 | lm loss value: 8.711856E+00 | lm loss PPL: 6.074506E+03 | 
+2024-06-25 16:03:09  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:12   iteration      150/  500000 | consumed samples:         2400 | elapsed time per iteration (ms): 299.6 | learning rate: 6.328E-06 | global batch size:    16 | lm loss: 8.727316E+00 | loss scale: 262144.0 | grad norm: 2.195 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:03:12  (min, max) time across ranks (ms):
+2024-06-25 16:03:12      evaluate .......................................: (502.74, 645.33)
+2024-06-25 16:03:12  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:12   validation loss at iteration 150 | lm loss value: 8.589768E+00 | lm loss PPL: 5.376368E+03 | 
+2024-06-25 16:03:12  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:12  saving checkpoint at iteration     150 to /mnt/pengyanxin/mdl/my_megatron/checkpoints
+2024-06-25 16:03:12  [2024-06-25 16:03:12,187] [INFO] [engine.py:303:save_state_dict_to_memory] 0 acquired the lock of shared memory: True.
+2024-06-25 16:03:12  [2024-06-25 16:03:12,187] [INFO] [engine.py:303:save_state_dict_to_memory] 1 acquired the lock of shared memory: True.
+2024-06-25 16:03:12  [2024-06-25 16:03:12,188] [INFO] [engine.py:303:save_state_dict_to_memory] 3 acquired the lock of shared memory: True.
+2024-06-25 16:03:12  [2024-06-25 16:03:12,188] [INFO] [engine.py:303:save_state_dict_to_memory] 2 acquired the lock of shared memory: True.
+2024-06-25 16:03:12  [2024-06-25 16:03:12,189] [INFO] [ckpt_saver.py:260:create_checkpoint] rank 0 size of the checkpoint_dict is 2
+2024-06-25 16:03:12  [2024-06-25 16:03:12,189] [INFO] [ckpt_saver.py:260:create_checkpoint] rank 1 size of the checkpoint_dict is 2
+2024-06-25 16:03:12  [2024-06-25 16:03:12,189] [INFO] [ckpt_saver.py:261:create_checkpoint] rank 0 self._buffer_size is 5381778444 
+2024-06-25 16:03:12  [2024-06-25 16:03:12,189] [INFO] [ckpt_saver.py:261:create_checkpoint] rank 1 self._buffer_size is 3174263820 
+2024-06-25 16:03:12  [2024-06-25 16:03:12,189] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 0 is creating checkpoint at iteration 150, offset: 7175704592
+2024-06-25 16:03:12  [2024-06-25 16:03:12,189] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 1 is creating checkpoint at iteration 150, offset: 4232351760
+2024-06-25 16:03:12  [2024-06-25 16:03:12,189] [INFO] [ckpt_saver.py:260:create_checkpoint] rank 2 size of the checkpoint_dict is 2
+2024-06-25 16:03:12  [2024-06-25 16:03:12,189] [INFO] [ckpt_saver.py:260:create_checkpoint] rank 3 size of the checkpoint_dict is 2
+2024-06-25 16:03:12  [2024-06-25 16:03:12,189] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 0 Current checkpoints: [50, 100, 150]
+2024-06-25 16:03:12  [2024-06-25 16:03:12,189] [INFO] [ckpt_saver.py:261:create_checkpoint] rank 2 self._buffer_size is 3174263820 
+2024-06-25 16:03:12  [2024-06-25 16:03:12,189] [INFO] [ckpt_saver.py:261:create_checkpoint] rank 3 self._buffer_size is 5337824268 
+2024-06-25 16:03:12  [2024-06-25 16:03:12,189] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 0 starting to set checkpoints
+2024-06-25 16:03:12  [2024-06-25 16:03:12,189] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 2 is creating checkpoint at iteration 150, offset: 4232351760
+2024-06-25 16:03:12  [2024-06-25 16:03:12,190] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 1 Current checkpoints: [50, 100, 150]
+2024-06-25 16:03:12  [2024-06-25 16:03:12,190] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 3 is creating checkpoint at iteration 150, offset: 7117099024
+2024-06-25 16:03:12  [2024-06-25 16:03:12,190] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 1 starting to set checkpoints
+2024-06-25 16:03:12  [2024-06-25 16:03:12,190] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 2 Current checkpoints: [50, 100, 150]
+2024-06-25 16:03:12  [2024-06-25 16:03:12,190] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 3 Current checkpoints: [50, 100, 150]
+2024-06-25 16:03:12  [2024-06-25 16:03:12,190] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 2 starting to set checkpoints
+2024-06-25 16:03:12  [2024-06-25 16:03:12,190] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 3 starting to set checkpoints
+2024-06-25 16:03:12  [2024-06-25 16:03:12,198] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 0 set checkpoints done
+2024-06-25 16:03:12  [2024-06-25 16:03:12,202] [INFO] [ckpt_saver.py:337:save_state_dict] rank 0 shared memory buffer size is 5381778444
+2024-06-25 16:03:12  [2024-06-25 16:03:12,208] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 1 set checkpoints done
+2024-06-25 16:03:12  [2024-06-25 16:03:12,212] [INFO] [ckpt_saver.py:337:save_state_dict] rank 1 shared memory buffer size is 3174263820
+2024-06-25 16:03:12  [2024-06-25 16:03:12,217] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 2 set checkpoints done
+2024-06-25 16:03:12  [2024-06-25 16:03:12,219] [INFO] [ckpt_saver.py:337:save_state_dict] rank 2 shared memory buffer size is 3174263820
+2024-06-25 16:03:12  [2024-06-25 16:03:12,224] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 3 set checkpoints done
+2024-06-25 16:03:12  [2024-06-25 16:03:12,227] [INFO] [ckpt_saver.py:337:save_state_dict] rank 3 shared memory buffer size is 5337824268
+2024-06-25 16:03:14  [2024-06-25 16:03:12,903] [INFO] [engine.py:99:wrapper] Local rank 2 execute save_to_memory in 0.717s.
+2024-06-25 16:03:14  [2024-06-25 16:03:12,914] [INFO] [engine.py:99:wrapper] Local rank 1 execute save_to_memory in 0.728s.
+2024-06-25 16:03:14  [2024-06-25 16:03:13,344] [INFO] [engine.py:99:wrapper] Local rank 3 execute save_to_memory in 1.158s.
+2024-06-25 16:03:14  [2024-06-25 16:03:13,355] [INFO] [engine.py:99:wrapper] Local rank 0 execute save_to_memory in 1.169s.
+2024-06-25 16:03:14  [2024-06-25 16:03:13,355] [INFO] [engine.py:99:wrapper] Local rank 3 execute save_to_storage in 1.17s.
+2024-06-25 16:03:14  [2024-06-25 16:03:13,355] [INFO] [engine.py:99:wrapper] Local rank 2 execute save_to_storage in 1.169s.
+2024-06-25 16:03:14  [2024-06-25 16:03:13,355] [INFO] [engine.py:99:wrapper] Local rank 1 execute save_to_storage in 1.169s.
+2024-06-25 16:03:14  [2024-06-25 16:03:13,356] [INFO] [engine.py:99:wrapper] Local rank 0 execute save_to_storage in 1.17s.
+2024-06-25 16:03:14  [2024-06-25 16:03:13,356] [INFO] [ckpt_saver.py:600:_sync_shm_to_storage] ShardingSaver save checkpoint to storage, event CheckpointEvent(type=<CheckpointEventType.SAVE: 1>, step=150, global_shard_num=0)
+2024-06-25 16:03:14  [2024-06-25 16:03:13,357] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 0 from the shared memory into the storage CheckpointConfig(rank=0, group_rank=0, world_size=4, step=150, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000150/mp_rank_00_000/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000150/rank_00000/distrib_optim.pt'}).
+2024-06-25 16:03:14  [2024-06-25 16:03:13,357] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 1 from the shared memory into the storage CheckpointConfig(rank=1, group_rank=0, world_size=4, step=150, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000150/mp_rank_00_001/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000150/rank_00001/distrib_optim.pt'}).
+2024-06-25 16:03:14  (min, max) time across ranks (ms):
+2024-06-25 16:03:14      save-checkpoint ................................: (1172.21, 1172.51)
+2024-06-25 16:03:14  [2024-06-25 16:03:13,358] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 2 from the shared memory into the storage CheckpointConfig(rank=2, group_rank=0, world_size=4, step=150, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000150/mp_rank_00_002/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000150/rank_00002/distrib_optim.pt'}).
+2024-06-25 16:03:14  [2024-06-25 16:03:13,358] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 3 from the shared memory into the storage CheckpointConfig(rank=3, group_rank=0, world_size=4, step=150, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000150/mp_rank_00_003/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000150/rank_00003/distrib_optim.pt'}).
+2024-06-25 16:03:14  [2024-06-25 16:03:13,358] [INFO] [ckpt_saver.py:366:load_state_dict]  rank 3 Loading checkpoint at step 150, config: CheckpointConfig(rank=3, group_rank=0, world_size=4, step=150, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000150/mp_rank_00_003/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000150/rank_00003/distrib_optim.pt'})
+2024-06-25 16:03:14  [2024-06-25 16:03:13,360] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 0.
+2024-06-25 16:03:14  [2024-06-25 16:03:13,360] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 2.
+2024-06-25 16:03:14  [2024-06-25 16:03:13,360] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 1.
+2024-06-25 16:03:14  [2024-06-25 16:03:14,420] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 3.
+2024-06-25 16:03:14  [2024-06-25 16:03:14,420] [INFO] [ckpt_saver.py:955:commit_checkpoint] All agents finish saving checkpoint for step 150
+2024-06-25 16:03:14  [2024-06-25 16:03:14,423] [INFO] [storage.py:171:commit] Succeed True in persisting the checkpoint of step 150.
+2024-06-25 16:03:17   iteration      160/  500000 | consumed samples:         2560 | elapsed time per iteration (ms): 297.7 | learning rate: 6.797E-06 | global batch size:    16 | lm loss: 8.590808E+00 | loss scale: 262144.0 | grad norm: 2.409 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:03:17  (min, max) time across ranks (ms):
+2024-06-25 16:03:17      evaluate .......................................: (499.48, 643.52)
+2024-06-25 16:03:17  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:17   validation loss at iteration 160 | lm loss value: 8.566526E+00 | lm loss PPL: 5.252852E+03 | 
+2024-06-25 16:03:17  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:21   iteration      170/  500000 | consumed samples:         2720 | elapsed time per iteration (ms): 298.7 | learning rate: 7.266E-06 | global batch size:    16 | lm loss: 8.549934E+00 | loss scale: 262144.0 | grad norm: 2.160 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:03:21  (min, max) time across ranks (ms):
+2024-06-25 16:03:21      evaluate .......................................: (494.53, 639.93)
+2024-06-25 16:03:21  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:21   validation loss at iteration 170 | lm loss value: 8.462890E+00 | lm loss PPL: 4.735723E+03 | 
+2024-06-25 16:03:21  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:25   iteration      180/  500000 | consumed samples:         2880 | elapsed time per iteration (ms): 303.0 | learning rate: 7.734E-06 | global batch size:    16 | lm loss: 8.484025E+00 | loss scale: 262144.0 | grad norm: 2.260 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:03:25  (min, max) time across ranks (ms):
+2024-06-25 16:03:25      evaluate .......................................: (494.02, 636.77)
+2024-06-25 16:03:25  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:25   validation loss at iteration 180 | lm loss value: 8.346819E+00 | lm loss PPL: 4.216746E+03 | 
+2024-06-25 16:03:25  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:28   iteration      190/  500000 | consumed samples:         3040 | elapsed time per iteration (ms): 303.0 | learning rate: 8.203E-06 | global batch size:    16 | lm loss: 8.343297E+00 | loss scale: 262144.0 | grad norm: 2.383 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:03:28  (min, max) time across ranks (ms):
+2024-06-25 16:03:28      evaluate .......................................: (497.83, 635.51)
+2024-06-25 16:03:28  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:28   validation loss at iteration 190 | lm loss value: 8.289960E+00 | lm loss PPL: 3.983674E+03 | 
+2024-06-25 16:03:28  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:32   iteration      200/  500000 | consumed samples:         3200 | elapsed time per iteration (ms): 305.4 | learning rate: 8.672E-06 | global batch size:    16 | lm loss: 8.258676E+00 | loss scale: 262144.0 | grad norm: 2.828 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:03:32  (min, max) time across ranks (ms):
+2024-06-25 16:03:32      evaluate .......................................: (499.66, 642.05)
+2024-06-25 16:03:32  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:32   validation loss at iteration 200 | lm loss value: 8.203117E+00 | lm loss PPL: 3.652318E+03 | 
+2024-06-25 16:03:32  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:32  saving checkpoint at iteration     200 to /mnt/pengyanxin/mdl/my_megatron/checkpoints
+2024-06-25 16:03:32  [2024-06-25 16:03:31,641] [INFO] [engine.py:303:save_state_dict_to_memory] 2 acquired the lock of shared memory: True.
+2024-06-25 16:03:32  [2024-06-25 16:03:31,641] [INFO] [engine.py:303:save_state_dict_to_memory] 3 acquired the lock of shared memory: True.
+2024-06-25 16:03:32  [2024-06-25 16:03:31,641] [INFO] [engine.py:303:save_state_dict_to_memory] 1 acquired the lock of shared memory: True.
+2024-06-25 16:03:32  [2024-06-25 16:03:31,641] [INFO] [engine.py:303:save_state_dict_to_memory] 0 acquired the lock of shared memory: True.
+2024-06-25 16:03:32  [2024-06-25 16:03:31,642] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 3 is creating checkpoint at iteration 200, offset: 0
+2024-06-25 16:03:32  [2024-06-25 16:03:31,642] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 2 is creating checkpoint at iteration 200, offset: 0
+2024-06-25 16:03:32  [2024-06-25 16:03:31,642] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 1 is creating checkpoint at iteration 200, offset: 0
+2024-06-25 16:03:32  [2024-06-25 16:03:31,642] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 3 Current checkpoints: [100, 150, 200]
+2024-06-25 16:03:32  [2024-06-25 16:03:31,642] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 2 Current checkpoints: [100, 150, 200]
+2024-06-25 16:03:32  [2024-06-25 16:03:31,642] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 1 Current checkpoints: [100, 150, 200]
+2024-06-25 16:03:32  [2024-06-25 16:03:31,642] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 0 is creating checkpoint at iteration 200, offset: 0
+2024-06-25 16:03:32  [2024-06-25 16:03:31,642] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 3 starting to set checkpoints
+2024-06-25 16:03:32  [2024-06-25 16:03:31,642] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 2 starting to set checkpoints
+2024-06-25 16:03:32  [2024-06-25 16:03:31,642] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 1 starting to set checkpoints
+2024-06-25 16:03:32  [2024-06-25 16:03:31,642] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 0 Current checkpoints: [100, 150, 200]
+2024-06-25 16:03:32  [2024-06-25 16:03:31,642] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 0 starting to set checkpoints
+2024-06-25 16:03:32  [2024-06-25 16:03:31,649] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 3 set checkpoints done
+2024-06-25 16:03:32  [2024-06-25 16:03:31,652] [INFO] [ckpt_saver.py:337:save_state_dict] rank 3 shared memory buffer size is 5337824268
+2024-06-25 16:03:32  [2024-06-25 16:03:31,658] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 2 set checkpoints done
+2024-06-25 16:03:32  [2024-06-25 16:03:31,661] [INFO] [ckpt_saver.py:337:save_state_dict] rank 2 shared memory buffer size is 3174263820
+2024-06-25 16:03:32  [2024-06-25 16:03:31,665] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 1 set checkpoints done
+2024-06-25 16:03:32  [2024-06-25 16:03:31,668] [INFO] [ckpt_saver.py:337:save_state_dict] rank 1 shared memory buffer size is 3174263820
+2024-06-25 16:03:32  [2024-06-25 16:03:31,674] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 0 set checkpoints done
+2024-06-25 16:03:32  [2024-06-25 16:03:31,677] [INFO] [ckpt_saver.py:337:save_state_dict] rank 0 shared memory buffer size is 5381778444
+2024-06-25 16:03:32  [2024-06-25 16:03:31,774] [INFO] [engine.py:99:wrapper] Local rank 1 execute save_to_memory in 0.134s.
+2024-06-25 16:03:32  [2024-06-25 16:03:31,784] [INFO] [engine.py:99:wrapper] Local rank 2 execute save_to_memory in 0.144s.
+2024-06-25 16:03:32  [2024-06-25 16:03:31,869] [INFO] [engine.py:99:wrapper] Local rank 3 execute save_to_memory in 0.229s.
+2024-06-25 16:03:32  [2024-06-25 16:03:31,884] [INFO] [engine.py:99:wrapper] Local rank 0 execute save_to_memory in 0.244s.
+2024-06-25 16:03:32  [2024-06-25 16:03:31,884] [INFO] [engine.py:99:wrapper] Local rank 2 execute save_to_storage in 0.245s.
+2024-06-25 16:03:32  [2024-06-25 16:03:31,884] [INFO] [engine.py:99:wrapper] Local rank 3 execute save_to_storage in 0.245s.
+2024-06-25 16:03:32  [2024-06-25 16:03:31,885] [INFO] [engine.py:99:wrapper] Local rank 1 execute save_to_storage in 0.245s.
+2024-06-25 16:03:32  [2024-06-25 16:03:31,885] [INFO] [engine.py:99:wrapper] Local rank 0 execute save_to_storage in 0.245s.
+2024-06-25 16:03:32  [2024-06-25 16:03:31,885] [INFO] [ckpt_saver.py:600:_sync_shm_to_storage] ShardingSaver save checkpoint to storage, event CheckpointEvent(type=<CheckpointEventType.SAVE: 1>, step=200, global_shard_num=0)
+2024-06-25 16:03:32  (min, max) time across ranks (ms):
+2024-06-25 16:03:32      save-checkpoint ................................: (246.78, 246.79)
+2024-06-25 16:03:32  [2024-06-25 16:03:31,886] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 0 from the shared memory into the storage CheckpointConfig(rank=0, group_rank=0, world_size=4, step=200, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000200/mp_rank_00_000/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000200/rank_00000/distrib_optim.pt'}).
+2024-06-25 16:03:32  [2024-06-25 16:03:31,886] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 1 from the shared memory into the storage CheckpointConfig(rank=1, group_rank=0, world_size=4, step=200, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000200/mp_rank_00_001/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000200/rank_00001/distrib_optim.pt'}).
+2024-06-25 16:03:32  [2024-06-25 16:03:31,887] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 2 from the shared memory into the storage CheckpointConfig(rank=2, group_rank=0, world_size=4, step=200, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000200/mp_rank_00_002/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000200/rank_00002/distrib_optim.pt'}).
+2024-06-25 16:03:32  [2024-06-25 16:03:31,887] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 3 from the shared memory into the storage CheckpointConfig(rank=3, group_rank=0, world_size=4, step=200, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000200/mp_rank_00_003/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000200/rank_00003/distrib_optim.pt'}).
+2024-06-25 16:03:32  [2024-06-25 16:03:31,887] [INFO] [ckpt_saver.py:366:load_state_dict]  rank 0 Loading checkpoint at step 200, config: CheckpointConfig(rank=0, group_rank=0, world_size=4, step=50, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000050/mp_rank_00_000/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000050/rank_00000/distrib_optim.pt'})
+2024-06-25 16:03:32  [2024-06-25 16:03:31,889] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 2.
+2024-06-25 16:03:32  [2024-06-25 16:03:31,889] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 1.
+2024-06-25 16:03:32  [2024-06-25 16:03:31,889] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 0.
+2024-06-25 16:03:34  [2024-06-25 16:03:32,923] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 3.
+2024-06-25 16:03:34  [2024-06-25 16:03:32,924] [INFO] [ckpt_saver.py:955:commit_checkpoint] All agents finish saving checkpoint for step 200
+2024-06-25 16:03:34  [2024-06-25 16:03:32,927] [INFO] [storage.py:171:commit] Succeed True in persisting the checkpoint of step 200.
+2024-06-25 16:03:36   iteration      210/  500000 | consumed samples:         3360 | elapsed time per iteration (ms): 310.3 | learning rate: 9.141E-06 | global batch size:    16 | lm loss: 8.174293E+00 | loss scale: 262144.0 | grad norm: 2.332 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:03:36  (min, max) time across ranks (ms):
+2024-06-25 16:03:36      evaluate .......................................: (488.16, 629.51)
+2024-06-25 16:03:36  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:36   validation loss at iteration 210 | lm loss value: 8.153232E+00 | lm loss PPL: 3.474589E+03 | 
+2024-06-25 16:03:36  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:40   iteration      220/  500000 | consumed samples:         3520 | elapsed time per iteration (ms): 311.2 | learning rate: 9.609E-06 | global batch size:    16 | lm loss: 8.116248E+00 | loss scale: 262144.0 | grad norm: 2.552 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:03:40  (min, max) time across ranks (ms):
+2024-06-25 16:03:40      evaluate .......................................: (493.04, 633.42)
+2024-06-25 16:03:40  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:40   validation loss at iteration 220 | lm loss value: 8.064241E+00 | lm loss PPL: 3.178744E+03 | 
+2024-06-25 16:03:40  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:43   iteration      230/  500000 | consumed samples:         3680 | elapsed time per iteration (ms): 312.0 | learning rate: 1.008E-05 | global batch size:    16 | lm loss: 8.048314E+00 | loss scale: 262144.0 | grad norm: 2.049 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:03:43  (min, max) time across ranks (ms):
+2024-06-25 16:03:43      evaluate .......................................: (495.64, 629.19)
+2024-06-25 16:03:43  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:43   validation loss at iteration 230 | lm loss value: 7.996807E+00 | lm loss PPL: 2.971454E+03 | 
+2024-06-25 16:03:43  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:47   iteration      240/  500000 | consumed samples:         3840 | elapsed time per iteration (ms): 308.2 | learning rate: 1.055E-05 | global batch size:    16 | lm loss: 7.935288E+00 | loss scale: 262144.0 | grad norm: 2.056 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:03:47  (min, max) time across ranks (ms):
+2024-06-25 16:03:47      evaluate .......................................: (485.68, 629.35)
+2024-06-25 16:03:47  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:47   validation loss at iteration 240 | lm loss value: 7.897312E+00 | lm loss PPL: 2.690042E+03 | 
+2024-06-25 16:03:47  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:51   iteration      250/  500000 | consumed samples:         4000 | elapsed time per iteration (ms): 312.4 | learning rate: 1.102E-05 | global batch size:    16 | lm loss: 7.856303E+00 | loss scale: 262144.0 | grad norm: 2.181 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:03:51  (min, max) time across ranks (ms):
+2024-06-25 16:03:51      evaluate .......................................: (493.41, 624.66)
+2024-06-25 16:03:51  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:51   validation loss at iteration 250 | lm loss value: 7.814958E+00 | lm loss PPL: 2.477383E+03 | 
+2024-06-25 16:03:51  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:51  saving checkpoint at iteration     250 to /mnt/pengyanxin/mdl/my_megatron/checkpoints
+2024-06-25 16:03:51  [2024-06-25 16:03:50,582] [INFO] [engine.py:303:save_state_dict_to_memory] 3 acquired the lock of shared memory: True.
+2024-06-25 16:03:51  [2024-06-25 16:03:50,583] [INFO] [engine.py:303:save_state_dict_to_memory] 1 acquired the lock of shared memory: True.
+2024-06-25 16:03:51  [2024-06-25 16:03:50,583] [INFO] [engine.py:303:save_state_dict_to_memory] 2 acquired the lock of shared memory: True.
+2024-06-25 16:03:51  [2024-06-25 16:03:50,583] [INFO] [engine.py:303:save_state_dict_to_memory] 0 acquired the lock of shared memory: True.
+2024-06-25 16:03:51  [2024-06-25 16:03:50,583] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 1 is creating checkpoint at iteration 250, offset: 1058087940
+2024-06-25 16:03:51  [2024-06-25 16:03:50,583] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 2 is creating checkpoint at iteration 250, offset: 1058087940
+2024-06-25 16:03:51  [2024-06-25 16:03:50,583] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 3 is creating checkpoint at iteration 250, offset: 1779274756
+2024-06-25 16:03:51  [2024-06-25 16:03:50,583] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 1 Current checkpoints: [150, 200, 250]
+2024-06-25 16:03:51  [2024-06-25 16:03:50,583] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 2 Current checkpoints: [150, 200, 250]
+2024-06-25 16:03:51  [2024-06-25 16:03:50,583] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 1 starting to set checkpoints
+2024-06-25 16:03:51  [2024-06-25 16:03:50,583] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 3 Current checkpoints: [150, 200, 250]
+2024-06-25 16:03:51  [2024-06-25 16:03:50,583] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 0 is creating checkpoint at iteration 250, offset: 1793926148
+2024-06-25 16:03:51  [2024-06-25 16:03:50,583] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 2 starting to set checkpoints
+2024-06-25 16:03:51  [2024-06-25 16:03:50,583] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 3 starting to set checkpoints
+2024-06-25 16:03:51  [2024-06-25 16:03:50,583] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 0 Current checkpoints: [150, 200, 250]
+2024-06-25 16:03:51  [2024-06-25 16:03:50,583] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 0 starting to set checkpoints
+2024-06-25 16:03:51  [2024-06-25 16:03:50,595] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 1 set checkpoints done
+2024-06-25 16:03:51  [2024-06-25 16:03:50,597] [INFO] [ckpt_saver.py:337:save_state_dict] rank 1 shared memory buffer size is 3174263820
+2024-06-25 16:03:51  [2024-06-25 16:03:50,602] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 3 set checkpoints done
+2024-06-25 16:03:51  [2024-06-25 16:03:50,605] [INFO] [ckpt_saver.py:337:save_state_dict] rank 3 shared memory buffer size is 5337824268
+2024-06-25 16:03:51  [2024-06-25 16:03:50,609] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 2 set checkpoints done
+2024-06-25 16:03:51  [2024-06-25 16:03:50,613] [INFO] [ckpt_saver.py:337:save_state_dict] rank 2 shared memory buffer size is 3174263820
+2024-06-25 16:03:51  [2024-06-25 16:03:50,618] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 0 set checkpoints done
+2024-06-25 16:03:51  [2024-06-25 16:03:50,621] [INFO] [ckpt_saver.py:337:save_state_dict] rank 0 shared memory buffer size is 5381778444
+2024-06-25 16:03:51  [2024-06-25 16:03:50,728] [INFO] [engine.py:99:wrapper] Local rank 1 execute save_to_memory in 0.147s.
+2024-06-25 16:03:51  [2024-06-25 16:03:50,741] [INFO] [engine.py:99:wrapper] Local rank 2 execute save_to_memory in 0.16s.
+2024-06-25 16:03:51  [2024-06-25 16:03:50,819] [INFO] [engine.py:99:wrapper] Local rank 3 execute save_to_memory in 0.239s.
+2024-06-25 16:03:51  [2024-06-25 16:03:50,835] [INFO] [engine.py:99:wrapper] Local rank 0 execute save_to_memory in 0.254s.
+2024-06-25 16:03:51  [2024-06-25 16:03:50,835] [INFO] [engine.py:99:wrapper] Local rank 2 execute save_to_storage in 0.255s.
+2024-06-25 16:03:51  [2024-06-25 16:03:50,835] [INFO] [engine.py:99:wrapper] Local rank 1 execute save_to_storage in 0.254s.
+2024-06-25 16:03:51  [2024-06-25 16:03:50,835] [INFO] [engine.py:99:wrapper] Local rank 3 execute save_to_storage in 0.255s.
+2024-06-25 16:03:51  [2024-06-25 16:03:50,836] [INFO] [engine.py:99:wrapper] Local rank 0 execute save_to_storage in 0.255s.
+2024-06-25 16:03:51  [2024-06-25 16:03:50,836] [INFO] [ckpt_saver.py:600:_sync_shm_to_storage] ShardingSaver save checkpoint to storage, event CheckpointEvent(type=<CheckpointEventType.SAVE: 1>, step=250, global_shard_num=0)
+2024-06-25 16:03:51  (min, max) time across ranks (ms):
+2024-06-25 16:03:51      save-checkpoint ................................: (257.28, 257.42)
+2024-06-25 16:03:51  [2024-06-25 16:03:50,839] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 0 from the shared memory into the storage CheckpointConfig(rank=0, group_rank=0, world_size=4, step=250, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000250/mp_rank_00_000/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000250/rank_00000/distrib_optim.pt'}).
+2024-06-25 16:03:51  [2024-06-25 16:03:50,839] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 1 from the shared memory into the storage CheckpointConfig(rank=1, group_rank=0, world_size=4, step=250, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000250/mp_rank_00_001/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000250/rank_00001/distrib_optim.pt'}).
+2024-06-25 16:03:51  [2024-06-25 16:03:50,839] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 2 from the shared memory into the storage CheckpointConfig(rank=2, group_rank=0, world_size=4, step=250, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000250/mp_rank_00_002/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000250/rank_00002/distrib_optim.pt'}).
+2024-06-25 16:03:51  [2024-06-25 16:03:50,840] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 3 from the shared memory into the storage CheckpointConfig(rank=3, group_rank=0, world_size=4, step=250, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000250/mp_rank_00_003/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000250/rank_00003/distrib_optim.pt'}).
+2024-06-25 16:03:51  [2024-06-25 16:03:50,840] [INFO] [ckpt_saver.py:366:load_state_dict]  rank 0 Loading checkpoint at step 250, config: CheckpointConfig(rank=0, group_rank=0, world_size=4, step=100, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000100/mp_rank_00_000/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000100/rank_00000/distrib_optim.pt'})
+2024-06-25 16:03:51  [2024-06-25 16:03:50,843] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 0.
+2024-06-25 16:03:51  [2024-06-25 16:03:50,843] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 2.
+2024-06-25 16:03:51  [2024-06-25 16:03:50,844] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 1.
+2024-06-25 16:03:53  [2024-06-25 16:03:51,937] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 3.
+2024-06-25 16:03:53  [2024-06-25 16:03:51,937] [INFO] [ckpt_saver.py:955:commit_checkpoint] All agents finish saving checkpoint for step 250
+2024-06-25 16:03:53  [2024-06-25 16:03:51,941] [INFO] [storage.py:171:commit] Succeed True in persisting the checkpoint of step 250.
+2024-06-25 16:03:55   iteration      260/  500000 | consumed samples:         4160 | elapsed time per iteration (ms): 308.9 | learning rate: 1.148E-05 | global batch size:    16 | lm loss: 7.829784E+00 | loss scale: 262144.0 | grad norm: 2.104 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:03:55  (min, max) time across ranks (ms):
+2024-06-25 16:03:55      evaluate .......................................: (498.66, 643.13)
+2024-06-25 16:03:55  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:55   validation loss at iteration 260 | lm loss value: 7.752716E+00 | lm loss PPL: 2.327887E+03 | 
+2024-06-25 16:03:55  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:59   iteration      270/  500000 | consumed samples:         4320 | elapsed time per iteration (ms): 307.4 | learning rate: 1.195E-05 | global batch size:    16 | lm loss: 7.718125E+00 | loss scale: 262144.0 | grad norm: 1.872 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:03:59  (min, max) time across ranks (ms):
+2024-06-25 16:03:59      evaluate .......................................: (492.60, 628.47)
+2024-06-25 16:03:59  -----------------------------------------------------------------------------------------------
+2024-06-25 16:03:59   validation loss at iteration 270 | lm loss value: 7.665557E+00 | lm loss PPL: 2.133582E+03 | 
+2024-06-25 16:03:59  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:02   iteration      280/  500000 | consumed samples:         4480 | elapsed time per iteration (ms): 310.0 | learning rate: 1.242E-05 | global batch size:    16 | lm loss: 7.692723E+00 | loss scale: 262144.0 | grad norm: 1.588 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:04:02  (min, max) time across ranks (ms):
+2024-06-25 16:04:02      evaluate .......................................: (500.88, 643.74)
+2024-06-25 16:04:02  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:02   validation loss at iteration 280 | lm loss value: 7.608983E+00 | lm loss PPL: 2.016227E+03 | 
+2024-06-25 16:04:02  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:06   iteration      290/  500000 | consumed samples:         4640 | elapsed time per iteration (ms): 286.0 | learning rate: 1.289E-05 | global batch size:    16 | lm loss: 7.617644E+00 | loss scale: 262144.0 | grad norm: 1.847 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:04:06  (min, max) time across ranks (ms):
+2024-06-25 16:04:06      evaluate .......................................: (501.41, 634.82)
+2024-06-25 16:04:06  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:06   validation loss at iteration 290 | lm loss value: 7.558680E+00 | lm loss PPL: 1.917313E+03 | 
+2024-06-25 16:04:06  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:09   iteration      300/  500000 | consumed samples:         4800 | elapsed time per iteration (ms): 277.4 | learning rate: 1.336E-05 | global batch size:    16 | lm loss: 7.580248E+00 | loss scale: 262144.0 | grad norm: 1.590 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:04:09  (min, max) time across ranks (ms):
+2024-06-25 16:04:09      evaluate .......................................: (495.00, 636.83)
+2024-06-25 16:04:09  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:09   validation loss at iteration 300 | lm loss value: 7.505629E+00 | lm loss PPL: 1.818249E+03 | 
+2024-06-25 16:04:09  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:09  saving checkpoint at iteration     300 to /mnt/pengyanxin/mdl/my_megatron/checkpoints
+2024-06-25 16:04:09  [2024-06-25 16:04:08,930] [INFO] [engine.py:303:save_state_dict_to_memory] 2 acquired the lock of shared memory: True.
+2024-06-25 16:04:09  [2024-06-25 16:04:08,931] [INFO] [engine.py:303:save_state_dict_to_memory] 3 acquired the lock of shared memory: True.
+2024-06-25 16:04:09  [2024-06-25 16:04:08,931] [INFO] [engine.py:303:save_state_dict_to_memory] 1 acquired the lock of shared memory: True.
+2024-06-25 16:04:09  [2024-06-25 16:04:08,931] [INFO] [engine.py:303:save_state_dict_to_memory] 0 acquired the lock of shared memory: True.
+2024-06-25 16:04:09  [2024-06-25 16:04:08,932] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 1 is creating checkpoint at iteration 300, offset: 4232351760
+2024-06-25 16:04:09  [2024-06-25 16:04:08,932] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 3 is creating checkpoint at iteration 300, offset: 7117099024
+2024-06-25 16:04:09  [2024-06-25 16:04:08,932] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 2 is creating checkpoint at iteration 300, offset: 4232351760
+2024-06-25 16:04:09  [2024-06-25 16:04:08,932] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 1 Current checkpoints: [200, 250, 300]
+2024-06-25 16:04:09  [2024-06-25 16:04:08,932] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 3 Current checkpoints: [200, 250, 300]
+2024-06-25 16:04:09  [2024-06-25 16:04:08,932] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 2 Current checkpoints: [200, 250, 300]
+2024-06-25 16:04:09  [2024-06-25 16:04:08,932] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 3 starting to set checkpoints
+2024-06-25 16:04:09  [2024-06-25 16:04:08,932] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 1 starting to set checkpoints
+2024-06-25 16:04:09  [2024-06-25 16:04:08,932] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 0 is creating checkpoint at iteration 300, offset: 7175704592
+2024-06-25 16:04:09  [2024-06-25 16:04:08,932] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 2 starting to set checkpoints
+2024-06-25 16:04:09  [2024-06-25 16:04:08,932] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 0 Current checkpoints: [200, 250, 300]
+2024-06-25 16:04:09  [2024-06-25 16:04:08,932] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 0 starting to set checkpoints
+2024-06-25 16:04:09  [2024-06-25 16:04:08,944] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 3 set checkpoints done
+2024-06-25 16:04:09  [2024-06-25 16:04:08,949] [INFO] [ckpt_saver.py:337:save_state_dict] rank 3 shared memory buffer size is 5337824268
+2024-06-25 16:04:09  [2024-06-25 16:04:08,953] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 2 set checkpoints done
+2024-06-25 16:04:09  [2024-06-25 16:04:08,957] [INFO] [ckpt_saver.py:337:save_state_dict] rank 2 shared memory buffer size is 3174263820
+2024-06-25 16:04:09  [2024-06-25 16:04:08,962] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 1 set checkpoints done
+2024-06-25 16:04:09  [2024-06-25 16:04:08,967] [INFO] [ckpt_saver.py:337:save_state_dict] rank 1 shared memory buffer size is 3174263820
+2024-06-25 16:04:09  [2024-06-25 16:04:08,972] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 0 set checkpoints done
+2024-06-25 16:04:09  [2024-06-25 16:04:08,976] [INFO] [ckpt_saver.py:337:save_state_dict] rank 0 shared memory buffer size is 5381778444
+2024-06-25 16:04:09  [2024-06-25 16:04:09,085] [INFO] [engine.py:99:wrapper] Local rank 2 execute save_to_memory in 0.155s.
+2024-06-25 16:04:09  [2024-06-25 16:04:09,100] [INFO] [engine.py:99:wrapper] Local rank 1 execute save_to_memory in 0.171s.
+2024-06-25 16:04:09  [2024-06-25 16:04:09,163] [INFO] [engine.py:99:wrapper] Local rank 3 execute save_to_memory in 0.234s.
+2024-06-25 16:04:09  [2024-06-25 16:04:09,170] [INFO] [engine.py:99:wrapper] Local rank 0 execute save_to_memory in 0.241s.
+2024-06-25 16:04:09  [2024-06-25 16:04:09,170] [INFO] [engine.py:99:wrapper] Local rank 3 execute save_to_storage in 0.241s.
+2024-06-25 16:04:09  [2024-06-25 16:04:09,170] [INFO] [engine.py:99:wrapper] Local rank 1 execute save_to_storage in 0.241s.
+2024-06-25 16:04:09  [2024-06-25 16:04:09,170] [INFO] [engine.py:99:wrapper] Local rank 2 execute save_to_storage in 0.241s.
+2024-06-25 16:04:09  [2024-06-25 16:04:09,171] [INFO] [engine.py:99:wrapper] Local rank 0 execute save_to_storage in 0.241s.
+2024-06-25 16:04:09  [2024-06-25 16:04:09,171] [INFO] [ckpt_saver.py:600:_sync_shm_to_storage] ShardingSaver save checkpoint to storage, event CheckpointEvent(type=<CheckpointEventType.SAVE: 1>, step=300, global_shard_num=0)
+2024-06-25 16:04:09  (min, max) time across ranks (ms):
+2024-06-25 16:04:09      save-checkpoint ................................: (243.35, 243.39)
+2024-06-25 16:04:09  [2024-06-25 16:04:09,173] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 0 from the shared memory into the storage CheckpointConfig(rank=0, group_rank=0, world_size=4, step=300, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000300/mp_rank_00_000/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000300/rank_00000/distrib_optim.pt'}).
+2024-06-25 16:04:09  [2024-06-25 16:04:09,173] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 1 from the shared memory into the storage CheckpointConfig(rank=1, group_rank=0, world_size=4, step=300, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000300/mp_rank_00_001/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000300/rank_00001/distrib_optim.pt'}).
+2024-06-25 16:04:09  [2024-06-25 16:04:09,173] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 2 from the shared memory into the storage CheckpointConfig(rank=2, group_rank=0, world_size=4, step=300, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000300/mp_rank_00_002/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000300/rank_00002/distrib_optim.pt'}).
+2024-06-25 16:04:09  [2024-06-25 16:04:09,174] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 3 from the shared memory into the storage CheckpointConfig(rank=3, group_rank=0, world_size=4, step=300, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000300/mp_rank_00_003/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000300/rank_00003/distrib_optim.pt'}).
+2024-06-25 16:04:09  [2024-06-25 16:04:09,174] [INFO] [ckpt_saver.py:366:load_state_dict]  rank 0 Loading checkpoint at step 300, config: CheckpointConfig(rank=0, group_rank=0, world_size=4, step=150, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000150/mp_rank_00_000/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000150/rank_00000/distrib_optim.pt'})
+2024-06-25 16:04:09  [2024-06-25 16:04:09,175] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 2.
+2024-06-25 16:04:09  [2024-06-25 16:04:09,176] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 0.
+2024-06-25 16:04:09  [2024-06-25 16:04:09,176] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 1.
+2024-06-25 16:04:09  [2024-06-25 16:04:09,178] [ERROR] [ckpt_saver.py:377:load_state_dict] rank 1 Failed to load checkpoint at step 300, error: requested buffer length (51511296 * 4 bytes) after offset (5175733260 bytes) must not be greater than actual buffer length (5337824268 bytes)
+2024-06-25 16:04:09  [2024-06-25 16:04:09,178] [INFO] [ckpt_saver.py:366:load_state_dict]  rank 0 Loading checkpoint at step 250, config: CheckpointConfig(rank=0, group_rank=0, world_size=4, step=250, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000250/mp_rank_00_000/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000250/rank_00000/distrib_optim.pt'})
+2024-06-25 16:04:11  [2024-06-25 16:04:10,171] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 3.
+2024-06-25 16:04:11  [2024-06-25 16:04:10,171] [INFO] [ckpt_saver.py:955:commit_checkpoint] All agents finish saving checkpoint for step 300
+2024-06-25 16:04:11  [2024-06-25 16:04:10,174] [INFO] [storage.py:171:commit] Succeed True in persisting the checkpoint of step 300.
+2024-06-25 16:04:13   iteration      310/  500000 | consumed samples:         4960 | elapsed time per iteration (ms): 302.7 | learning rate: 1.383E-05 | global batch size:    16 | lm loss: 7.476040E+00 | loss scale: 262144.0 | grad norm: 1.597 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:04:13  (min, max) time across ranks (ms):
+2024-06-25 16:04:13      evaluate .......................................: (496.90, 637.43)
+2024-06-25 16:04:13  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:13   validation loss at iteration 310 | lm loss value: 7.412536E+00 | lm loss PPL: 1.656622E+03 | 
+2024-06-25 16:04:13  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:17   iteration      320/  500000 | consumed samples:         5120 | elapsed time per iteration (ms): 296.2 | learning rate: 1.430E-05 | global batch size:    16 | lm loss: 7.424236E+00 | loss scale: 262144.0 | grad norm: 2.088 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:04:17  (min, max) time across ranks (ms):
+2024-06-25 16:04:17      evaluate .......................................: (497.52, 637.73)
+2024-06-25 16:04:17  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:17   validation loss at iteration 320 | lm loss value: 7.350178E+00 | lm loss PPL: 1.556473E+03 | 
+2024-06-25 16:04:17  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:20   iteration      330/  500000 | consumed samples:         5280 | elapsed time per iteration (ms): 297.3 | learning rate: 1.477E-05 | global batch size:    16 | lm loss: 7.380368E+00 | loss scale: 262144.0 | grad norm: 1.521 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:04:20  (min, max) time across ranks (ms):
+2024-06-25 16:04:20      evaluate .......................................: (495.84, 635.79)
+2024-06-25 16:04:20  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:20   validation loss at iteration 330 | lm loss value: 7.352483E+00 | lm loss PPL: 1.560065E+03 | 
+2024-06-25 16:04:20  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:24   iteration      340/  500000 | consumed samples:         5440 | elapsed time per iteration (ms): 306.5 | learning rate: 1.523E-05 | global batch size:    16 | lm loss: 7.319227E+00 | loss scale: 262144.0 | grad norm: 1.467 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:04:24  (min, max) time across ranks (ms):
+2024-06-25 16:04:24      evaluate .......................................: (493.85, 635.52)
+2024-06-25 16:04:24  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:24   validation loss at iteration 340 | lm loss value: 7.312914E+00 | lm loss PPL: 1.499541E+03 | 
+2024-06-25 16:04:24  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:28   iteration      350/  500000 | consumed samples:         5600 | elapsed time per iteration (ms): 307.9 | learning rate: 1.570E-05 | global batch size:    16 | lm loss: 7.298792E+00 | loss scale: 262144.0 | grad norm: 1.964 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:04:28  (min, max) time across ranks (ms):
+2024-06-25 16:04:28      evaluate .......................................: (495.45, 625.46)
+2024-06-25 16:04:28  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:28   validation loss at iteration 350 | lm loss value: 7.268497E+00 | lm loss PPL: 1.434393E+03 | 
+2024-06-25 16:04:28  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:28  saving checkpoint at iteration     350 to /mnt/pengyanxin/mdl/my_megatron/checkpoints
+2024-06-25 16:04:28  [2024-06-25 16:04:27,457] [INFO] [engine.py:303:save_state_dict_to_memory] 0 acquired the lock of shared memory: True.
+2024-06-25 16:04:28  [2024-06-25 16:04:27,457] [INFO] [engine.py:303:save_state_dict_to_memory] 1 acquired the lock of shared memory: True.
+2024-06-25 16:04:28  [2024-06-25 16:04:27,457] [INFO] [engine.py:303:save_state_dict_to_memory] 3 acquired the lock of shared memory: True.
+2024-06-25 16:04:28  [2024-06-25 16:04:27,458] [INFO] [engine.py:303:save_state_dict_to_memory] 2 acquired the lock of shared memory: True.
+2024-06-25 16:04:28  [2024-06-25 16:04:27,458] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 3 is creating checkpoint at iteration 350, offset: 0
+2024-06-25 16:04:28  [2024-06-25 16:04:27,458] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 1 is creating checkpoint at iteration 350, offset: 0
+2024-06-25 16:04:28  [2024-06-25 16:04:27,458] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 0 is creating checkpoint at iteration 350, offset: 0
+2024-06-25 16:04:28  [2024-06-25 16:04:27,458] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 3 Current checkpoints: [250, 300, 350]
+2024-06-25 16:04:28  [2024-06-25 16:04:27,458] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 0 Current checkpoints: [250, 300, 350]
+2024-06-25 16:04:28  [2024-06-25 16:04:27,458] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 1 Current checkpoints: [250, 300, 350]
+2024-06-25 16:04:28  [2024-06-25 16:04:27,458] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 3 starting to set checkpoints
+2024-06-25 16:04:28  [2024-06-25 16:04:27,458] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 0 starting to set checkpoints
+2024-06-25 16:04:28  [2024-06-25 16:04:27,458] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 1 starting to set checkpoints
+2024-06-25 16:04:28  [2024-06-25 16:04:27,458] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 2 is creating checkpoint at iteration 350, offset: 0
+2024-06-25 16:04:28  [2024-06-25 16:04:27,458] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 2 Current checkpoints: [250, 300, 350]
+2024-06-25 16:04:28  [2024-06-25 16:04:27,458] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 2 starting to set checkpoints
+2024-06-25 16:04:28  [2024-06-25 16:04:27,466] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 3 set checkpoints done
+2024-06-25 16:04:28  [2024-06-25 16:04:27,469] [INFO] [ckpt_saver.py:337:save_state_dict] rank 3 shared memory buffer size is 5337824268
+2024-06-25 16:04:28  [2024-06-25 16:04:27,475] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 0 set checkpoints done
+2024-06-25 16:04:28  [2024-06-25 16:04:27,700] [INFO] [ckpt_saver.py:337:save_state_dict] rank 0 shared memory buffer size is 5381778444
+2024-06-25 16:04:28  [2024-06-25 16:04:27,704] [INFO] [engine.py:99:wrapper] Local rank 3 execute save_to_memory in 0.248s.
+2024-06-25 16:04:28  [2024-06-25 16:04:27,709] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 1 set checkpoints done
+2024-06-25 16:04:28  [2024-06-25 16:04:27,716] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 2 set checkpoints done
+2024-06-25 16:04:28  [2024-06-25 16:04:27,719] [INFO] [ckpt_saver.py:337:save_state_dict] rank 1 shared memory buffer size is 3174263820
+2024-06-25 16:04:28  [2024-06-25 16:04:27,721] [INFO] [ckpt_saver.py:337:save_state_dict] rank 2 shared memory buffer size is 3174263820
+2024-06-25 16:04:28  [2024-06-25 16:04:27,828] [INFO] [engine.py:99:wrapper] Local rank 1 execute save_to_memory in 0.372s.
+2024-06-25 16:04:28  [2024-06-25 16:04:27,841] [INFO] [engine.py:99:wrapper] Local rank 2 execute save_to_memory in 0.385s.
+2024-06-25 16:04:28  [2024-06-25 16:04:27,897] [INFO] [engine.py:99:wrapper] Local rank 0 execute save_to_memory in 0.44s.
+2024-06-25 16:04:28  [2024-06-25 16:04:27,897] [INFO] [engine.py:99:wrapper] Local rank 2 execute save_to_storage in 0.441s.
+2024-06-25 16:04:28  [2024-06-25 16:04:27,897] [INFO] [engine.py:99:wrapper] Local rank 3 execute save_to_storage in 0.441s.
+2024-06-25 16:04:28  [2024-06-25 16:04:27,897] [INFO] [engine.py:99:wrapper] Local rank 1 execute save_to_storage in 0.441s.
+2024-06-25 16:04:28  [2024-06-25 16:04:27,897] [INFO] [engine.py:99:wrapper] Local rank 0 execute save_to_storage in 0.441s.
+2024-06-25 16:04:28  [2024-06-25 16:04:27,897] [INFO] [ckpt_saver.py:600:_sync_shm_to_storage] ShardingSaver save checkpoint to storage, event CheckpointEvent(type=<CheckpointEventType.SAVE: 1>, step=350, global_shard_num=0)
+2024-06-25 16:04:28  (min, max) time across ranks (ms):
+2024-06-25 16:04:28      save-checkpoint ................................: (443.15, 443.30)
+2024-06-25 16:04:28  [2024-06-25 16:04:27,899] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 0 from the shared memory into the storage CheckpointConfig(rank=0, group_rank=0, world_size=4, step=350, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000350/mp_rank_00_000/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000350/rank_00000/distrib_optim.pt'}).
+2024-06-25 16:04:28  [2024-06-25 16:04:27,899] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 1 from the shared memory into the storage CheckpointConfig(rank=1, group_rank=0, world_size=4, step=350, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000350/mp_rank_00_001/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000350/rank_00001/distrib_optim.pt'}).
+2024-06-25 16:04:28  [2024-06-25 16:04:27,899] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 2 from the shared memory into the storage CheckpointConfig(rank=2, group_rank=0, world_size=4, step=350, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000350/mp_rank_00_002/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000350/rank_00002/distrib_optim.pt'}).
+2024-06-25 16:04:28  [2024-06-25 16:04:27,900] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 3 from the shared memory into the storage CheckpointConfig(rank=3, group_rank=0, world_size=4, step=350, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000350/mp_rank_00_003/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000350/rank_00003/distrib_optim.pt'}).
+2024-06-25 16:04:28  [2024-06-25 16:04:27,900] [INFO] [ckpt_saver.py:366:load_state_dict]  rank 2 Loading checkpoint at step 350, config: CheckpointConfig(rank=2, group_rank=0, world_size=4, step=200, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000200/mp_rank_00_002/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000200/rank_00002/distrib_optim.pt'})
+2024-06-25 16:04:28  [2024-06-25 16:04:27,901] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 1.
+2024-06-25 16:04:28  [2024-06-25 16:04:27,902] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 0.
+2024-06-25 16:04:28  [2024-06-25 16:04:27,902] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 2.
+2024-06-25 16:04:30  [2024-06-25 16:04:28,602] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 3.
+2024-06-25 16:04:30  [2024-06-25 16:04:28,602] [INFO] [ckpt_saver.py:955:commit_checkpoint] All agents finish saving checkpoint for step 350
+2024-06-25 16:04:30  [2024-06-25 16:04:28,606] [INFO] [storage.py:171:commit] Succeed True in persisting the checkpoint of step 350.
+2024-06-25 16:04:32   iteration      360/  500000 | consumed samples:         5760 | elapsed time per iteration (ms): 310.0 | learning rate: 1.617E-05 | global batch size:    16 | lm loss: 7.227885E+00 | loss scale: 262144.0 | grad norm: 1.571 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:04:32  (min, max) time across ranks (ms):
+2024-06-25 16:04:32      evaluate .......................................: (487.25, 632.73)
+2024-06-25 16:04:32  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:32   validation loss at iteration 360 | lm loss value: 7.208020E+00 | lm loss PPL: 1.350216E+03 | 
+2024-06-25 16:04:32  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:36   iteration      370/  500000 | consumed samples:         5920 | elapsed time per iteration (ms): 304.9 | learning rate: 1.664E-05 | global batch size:    16 | lm loss: 7.229494E+00 | loss scale: 262144.0 | grad norm: 1.475 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:04:36  (min, max) time across ranks (ms):
+2024-06-25 16:04:36      evaluate .......................................: (498.76, 631.05)
+2024-06-25 16:04:36  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:36   validation loss at iteration 370 | lm loss value: 7.193422E+00 | lm loss PPL: 1.330649E+03 | 
+2024-06-25 16:04:36  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:39   iteration      380/  500000 | consumed samples:         6080 | elapsed time per iteration (ms): 311.7 | learning rate: 1.711E-05 | global batch size:    16 | lm loss: 7.161609E+00 | loss scale: 262144.0 | grad norm: 1.387 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:04:39  (min, max) time across ranks (ms):
+2024-06-25 16:04:39      evaluate .......................................: (496.96, 640.65)
+2024-06-25 16:04:39  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:39   validation loss at iteration 380 | lm loss value: 7.180369E+00 | lm loss PPL: 1.313393E+03 | 
+2024-06-25 16:04:39  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:43   iteration      390/  500000 | consumed samples:         6240 | elapsed time per iteration (ms): 310.3 | learning rate: 1.758E-05 | global batch size:    16 | lm loss: 7.164129E+00 | loss scale: 262144.0 | grad norm: 1.600 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:04:43  (min, max) time across ranks (ms):
+2024-06-25 16:04:43      evaluate .......................................: (497.11, 632.19)
+2024-06-25 16:04:43  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:43   validation loss at iteration 390 | lm loss value: 7.172719E+00 | lm loss PPL: 1.303384E+03 | 
+2024-06-25 16:04:43  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:47   iteration      400/  500000 | consumed samples:         6400 | elapsed time per iteration (ms): 306.7 | learning rate: 1.805E-05 | global batch size:    16 | lm loss: 7.133188E+00 | loss scale: 262144.0 | grad norm: 1.620 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:04:47  (min, max) time across ranks (ms):
+2024-06-25 16:04:47      evaluate .......................................: (492.00, 637.26)
+2024-06-25 16:04:47  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:47   validation loss at iteration 400 | lm loss value: 7.116132E+00 | lm loss PPL: 1.231677E+03 | 
+2024-06-25 16:04:47  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:47  saving checkpoint at iteration     400 to /mnt/pengyanxin/mdl/my_megatron/checkpoints
+2024-06-25 16:04:47  [2024-06-25 16:04:46,516] [INFO] [engine.py:303:save_state_dict_to_memory] 3 acquired the lock of shared memory: True.
+2024-06-25 16:04:47  [2024-06-25 16:04:46,516] [INFO] [engine.py:303:save_state_dict_to_memory] 1 acquired the lock of shared memory: True.
+2024-06-25 16:04:47  [2024-06-25 16:04:46,516] [INFO] [engine.py:303:save_state_dict_to_memory] 2 acquired the lock of shared memory: True.
+2024-06-25 16:04:47  [2024-06-25 16:04:46,516] [INFO] [engine.py:303:save_state_dict_to_memory] 0 acquired the lock of shared memory: True.
+2024-06-25 16:04:47  [2024-06-25 16:04:46,517] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 1 is creating checkpoint at iteration 400, offset: 1058087940
+2024-06-25 16:04:47  [2024-06-25 16:04:46,517] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 3 is creating checkpoint at iteration 400, offset: 1779274756
+2024-06-25 16:04:47  [2024-06-25 16:04:46,517] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 2 is creating checkpoint at iteration 400, offset: 1058087940
+2024-06-25 16:04:47  [2024-06-25 16:04:46,517] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 1 Current checkpoints: [300, 350, 400]
+2024-06-25 16:04:47  [2024-06-25 16:04:46,517] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 3 Current checkpoints: [300, 350, 400]
+2024-06-25 16:04:47  [2024-06-25 16:04:46,517] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 0 is creating checkpoint at iteration 400, offset: 1793926148
+2024-06-25 16:04:47  [2024-06-25 16:04:46,517] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 2 Current checkpoints: [300, 350, 400]
+2024-06-25 16:04:47  [2024-06-25 16:04:46,517] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 1 starting to set checkpoints
+2024-06-25 16:04:47  [2024-06-25 16:04:46,517] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 3 starting to set checkpoints
+2024-06-25 16:04:47  [2024-06-25 16:04:46,517] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 2 starting to set checkpoints
+2024-06-25 16:04:47  [2024-06-25 16:04:46,517] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 0 Current checkpoints: [300, 350, 400]
+2024-06-25 16:04:47  [2024-06-25 16:04:46,517] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 0 starting to set checkpoints
+2024-06-25 16:04:47  [2024-06-25 16:04:46,524] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 3 set checkpoints done
+2024-06-25 16:04:47  [2024-06-25 16:04:46,528] [INFO] [ckpt_saver.py:337:save_state_dict] rank 3 shared memory buffer size is 5337824268
+2024-06-25 16:04:47  [2024-06-25 16:04:46,534] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 1 set checkpoints done
+2024-06-25 16:04:47  [2024-06-25 16:04:46,540] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 2 set checkpoints done
+2024-06-25 16:04:47  [2024-06-25 16:04:46,541] [INFO] [ckpt_saver.py:337:save_state_dict] rank 1 shared memory buffer size is 3174263820
+2024-06-25 16:04:47  [2024-06-25 16:04:46,544] [INFO] [ckpt_saver.py:337:save_state_dict] rank 2 shared memory buffer size is 3174263820
+2024-06-25 16:04:47  [2024-06-25 16:04:46,550] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 0 set checkpoints done
+2024-06-25 16:04:47  [2024-06-25 16:04:46,552] [INFO] [ckpt_saver.py:337:save_state_dict] rank 0 shared memory buffer size is 5381778444
+2024-06-25 16:04:47  [2024-06-25 16:04:46,672] [INFO] [engine.py:99:wrapper] Local rank 1 execute save_to_memory in 0.157s.
+2024-06-25 16:04:47  [2024-06-25 16:04:46,674] [INFO] [engine.py:99:wrapper] Local rank 2 execute save_to_memory in 0.159s.
+2024-06-25 16:04:47  [2024-06-25 16:04:46,742] [INFO] [engine.py:99:wrapper] Local rank 3 execute save_to_memory in 0.227s.
+2024-06-25 16:04:47  [2024-06-25 16:04:46,760] [INFO] [engine.py:99:wrapper] Local rank 0 execute save_to_memory in 0.245s.
+2024-06-25 16:04:47  [2024-06-25 16:04:46,760] [INFO] [engine.py:99:wrapper] Local rank 3 execute save_to_storage in 0.245s.
+2024-06-25 16:04:47  [2024-06-25 16:04:46,760] [INFO] [engine.py:99:wrapper] Local rank 2 execute save_to_storage in 0.245s.
+2024-06-25 16:04:47  [2024-06-25 16:04:46,760] [INFO] [engine.py:99:wrapper] Local rank 1 execute save_to_storage in 0.245s.
+2024-06-25 16:04:47  [2024-06-25 16:04:46,760] [INFO] [engine.py:99:wrapper] Local rank 0 execute save_to_storage in 0.245s.
+2024-06-25 16:04:47  [2024-06-25 16:04:46,760] [INFO] [ckpt_saver.py:600:_sync_shm_to_storage] ShardingSaver save checkpoint to storage, event CheckpointEvent(type=<CheckpointEventType.SAVE: 1>, step=400, global_shard_num=0)
+2024-06-25 16:04:47  (min, max) time across ranks (ms):
+2024-06-25 16:04:47      save-checkpoint ................................: (246.85, 246.86)
+2024-06-25 16:04:47  [2024-06-25 16:04:46,761] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 0 from the shared memory into the storage CheckpointConfig(rank=0, group_rank=0, world_size=4, step=400, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000400/mp_rank_00_000/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000400/rank_00000/distrib_optim.pt'}).
+2024-06-25 16:04:47  [2024-06-25 16:04:46,762] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 1 from the shared memory into the storage CheckpointConfig(rank=1, group_rank=0, world_size=4, step=400, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000400/mp_rank_00_001/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000400/rank_00001/distrib_optim.pt'}).
+2024-06-25 16:04:47  [2024-06-25 16:04:46,762] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 2 from the shared memory into the storage CheckpointConfig(rank=2, group_rank=0, world_size=4, step=400, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000400/mp_rank_00_002/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000400/rank_00002/distrib_optim.pt'}).
+2024-06-25 16:04:47  [2024-06-25 16:04:46,762] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 3 from the shared memory into the storage CheckpointConfig(rank=3, group_rank=0, world_size=4, step=400, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000400/mp_rank_00_003/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000400/rank_00003/distrib_optim.pt'}).
+2024-06-25 16:04:47  [2024-06-25 16:04:46,762] [INFO] [ckpt_saver.py:366:load_state_dict]  rank 0 Loading checkpoint at step 400, config: CheckpointConfig(rank=0, group_rank=0, world_size=4, step=250, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000250/mp_rank_00_000/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000250/rank_00000/distrib_optim.pt'})
+2024-06-25 16:04:47  [2024-06-25 16:04:46,764] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 1.
+2024-06-25 16:04:47  [2024-06-25 16:04:46,764] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 0.
+2024-06-25 16:04:47  [2024-06-25 16:04:46,767] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 2.
+2024-06-25 16:04:49  [2024-06-25 16:04:47,824] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 3.
+2024-06-25 16:04:49  [2024-06-25 16:04:47,824] [INFO] [ckpt_saver.py:955:commit_checkpoint] All agents finish saving checkpoint for step 400
+2024-06-25 16:04:49  [2024-06-25 16:04:47,827] [INFO] [storage.py:171:commit] Succeed True in persisting the checkpoint of step 400.
+2024-06-25 16:04:51   iteration      410/  500000 | consumed samples:         6560 | elapsed time per iteration (ms): 303.3 | learning rate: 1.852E-05 | global batch size:    16 | lm loss: 7.115795E+00 | loss scale: 262144.0 | grad norm: 1.291 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:04:51  (min, max) time across ranks (ms):
+2024-06-25 16:04:51      evaluate .......................................: (496.30, 632.10)
+2024-06-25 16:04:51  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:51   validation loss at iteration 410 | lm loss value: 7.126538E+00 | lm loss PPL: 1.244561E+03 | 
+2024-06-25 16:04:51  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:54   iteration      420/  500000 | consumed samples:         6720 | elapsed time per iteration (ms): 299.6 | learning rate: 1.898E-05 | global batch size:    16 | lm loss: 7.123289E+00 | loss scale: 262144.0 | grad norm: 1.589 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:04:54  (min, max) time across ranks (ms):
+2024-06-25 16:04:54      evaluate .......................................: (494.09, 636.73)
+2024-06-25 16:04:54  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:54   validation loss at iteration 420 | lm loss value: 7.106922E+00 | lm loss PPL: 1.220385E+03 | 
+2024-06-25 16:04:54  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:58   iteration      430/  500000 | consumed samples:         6880 | elapsed time per iteration (ms): 296.0 | learning rate: 1.945E-05 | global batch size:    16 | lm loss: 7.092519E+00 | loss scale: 262144.0 | grad norm: 2.024 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:04:58  (min, max) time across ranks (ms):
+2024-06-25 16:04:58      evaluate .......................................: (495.50, 627.79)
+2024-06-25 16:04:58  -----------------------------------------------------------------------------------------------
+2024-06-25 16:04:58   validation loss at iteration 430 | lm loss value: 7.043888E+00 | lm loss PPL: 1.145834E+03 | 
+2024-06-25 16:04:58  -----------------------------------------------------------------------------------------------
+2024-06-25 16:05:02   iteration      440/  500000 | consumed samples:         7040 | elapsed time per iteration (ms): 296.9 | learning rate: 1.992E-05 | global batch size:    16 | lm loss: 7.057175E+00 | loss scale: 262144.0 | grad norm: 1.564 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:05:02  (min, max) time across ranks (ms):
+2024-06-25 16:05:02      evaluate .......................................: (493.28, 638.24)
+2024-06-25 16:05:02  -----------------------------------------------------------------------------------------------
+2024-06-25 16:05:02   validation loss at iteration 440 | lm loss value: 7.053993E+00 | lm loss PPL: 1.157471E+03 | 
+2024-06-25 16:05:02  -----------------------------------------------------------------------------------------------
+2024-06-25 16:05:05   iteration      450/  500000 | consumed samples:         7200 | elapsed time per iteration (ms): 294.5 | learning rate: 2.039E-05 | global batch size:    16 | lm loss: 6.987884E+00 | loss scale: 262144.0 | grad norm: 1.810 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:05:05  (min, max) time across ranks (ms):
+2024-06-25 16:05:05      evaluate .......................................: (497.33, 635.79)
+2024-06-25 16:05:05  -----------------------------------------------------------------------------------------------
+2024-06-25 16:05:05   validation loss at iteration 450 | lm loss value: 6.962933E+00 | lm loss PPL: 1.056728E+03 | 
+2024-06-25 16:05:05  -----------------------------------------------------------------------------------------------
+2024-06-25 16:05:05  saving checkpoint at iteration     450 to /mnt/pengyanxin/mdl/my_megatron/checkpoints
+2024-06-25 16:05:05  [2024-06-25 16:05:04,842] [INFO] [engine.py:303:save_state_dict_to_memory] 3 acquired the lock of shared memory: True.
+2024-06-25 16:05:05  [2024-06-25 16:05:04,843] [INFO] [engine.py:303:save_state_dict_to_memory] 1 acquired the lock of shared memory: True.
+2024-06-25 16:05:05  [2024-06-25 16:05:04,843] [INFO] [engine.py:303:save_state_dict_to_memory] 2 acquired the lock of shared memory: True.
+2024-06-25 16:05:05  [2024-06-25 16:05:04,843] [INFO] [engine.py:303:save_state_dict_to_memory] 0 acquired the lock of shared memory: True.
+2024-06-25 16:05:05  [2024-06-25 16:05:04,843] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 3 is creating checkpoint at iteration 450, offset: 7117099024
+2024-06-25 16:05:05  [2024-06-25 16:05:04,843] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 1 is creating checkpoint at iteration 450, offset: 4232351760
+2024-06-25 16:05:05  [2024-06-25 16:05:04,843] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 2 is creating checkpoint at iteration 450, offset: 4232351760
+2024-06-25 16:05:05  [2024-06-25 16:05:04,843] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 1 Current checkpoints: [350, 400, 450]
+2024-06-25 16:05:05  [2024-06-25 16:05:04,843] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 3 Current checkpoints: [350, 400, 450]
+2024-06-25 16:05:05  [2024-06-25 16:05:04,843] [INFO] [ckpt_saver.py:266:create_checkpoint] rank 0 is creating checkpoint at iteration 450, offset: 7175704592
+2024-06-25 16:05:05  [2024-06-25 16:05:04,843] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 2 Current checkpoints: [350, 400, 450]
+2024-06-25 16:05:05  [2024-06-25 16:05:04,843] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 1 starting to set checkpoints
+2024-06-25 16:05:05  [2024-06-25 16:05:04,843] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 3 starting to set checkpoints
+2024-06-25 16:05:05  [2024-06-25 16:05:04,843] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 2 starting to set checkpoints
+2024-06-25 16:05:05  [2024-06-25 16:05:04,843] [INFO] [ckpt_saver.py:278:create_checkpoint] rank 0 Current checkpoints: [350, 400, 450]
+2024-06-25 16:05:05  [2024-06-25 16:05:04,843] [INFO] [ckpt_saver.py:279:create_checkpoint] rank 0 starting to set checkpoints
+2024-06-25 16:05:05  [2024-06-25 16:05:04,852] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 3 set checkpoints done
+2024-06-25 16:05:05  [2024-06-25 16:05:04,856] [INFO] [ckpt_saver.py:337:save_state_dict] rank 3 shared memory buffer size is 5337824268
+2024-06-25 16:05:05  [2024-06-25 16:05:04,860] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 1 set checkpoints done
+2024-06-25 16:05:05  [2024-06-25 16:05:04,864] [INFO] [ckpt_saver.py:337:save_state_dict] rank 1 shared memory buffer size is 3174263820
+2024-06-25 16:05:05  [2024-06-25 16:05:04,869] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 2 set checkpoints done
+2024-06-25 16:05:05  [2024-06-25 16:05:04,872] [INFO] [ckpt_saver.py:337:save_state_dict] rank 2 shared memory buffer size is 3174263820
+2024-06-25 16:05:05  [2024-06-25 16:05:04,878] [INFO] [ckpt_saver.py:281:create_checkpoint] rank 0 set checkpoints done
+2024-06-25 16:05:05  [2024-06-25 16:05:04,880] [INFO] [ckpt_saver.py:337:save_state_dict] rank 0 shared memory buffer size is 5381778444
+2024-06-25 16:05:05  [2024-06-25 16:05:04,993] [INFO] [engine.py:99:wrapper] Local rank 1 execute save_to_memory in 0.152s.
+2024-06-25 16:05:05  [2024-06-25 16:05:05,001] [INFO] [engine.py:99:wrapper] Local rank 2 execute save_to_memory in 0.16s.
+2024-06-25 16:05:05  [2024-06-25 16:05:05,064] [INFO] [engine.py:99:wrapper] Local rank 0 execute save_to_memory in 0.222s.
+2024-06-25 16:05:05  [2024-06-25 16:05:05,070] [INFO] [engine.py:99:wrapper] Local rank 3 execute save_to_memory in 0.229s.
+2024-06-25 16:05:05  [2024-06-25 16:05:05,070] [INFO] [engine.py:99:wrapper] Local rank 2 execute save_to_storage in 0.229s.
+2024-06-25 16:05:05  [2024-06-25 16:05:05,070] [INFO] [engine.py:99:wrapper] Local rank 3 execute save_to_storage in 0.229s.
+2024-06-25 16:05:05  [2024-06-25 16:05:05,070] [INFO] [engine.py:99:wrapper] Local rank 1 execute save_to_storage in 0.229s.
+2024-06-25 16:05:05  [2024-06-25 16:05:05,071] [INFO] [engine.py:99:wrapper] Local rank 0 execute save_to_storage in 0.229s.
+2024-06-25 16:05:05  [2024-06-25 16:05:05,071] [INFO] [ckpt_saver.py:600:_sync_shm_to_storage] ShardingSaver save checkpoint to storage, event CheckpointEvent(type=<CheckpointEventType.SAVE: 1>, step=450, global_shard_num=0)
+2024-06-25 16:05:05  (min, max) time across ranks (ms):
+2024-06-25 16:05:05      save-checkpoint ................................: (231.47, 231.52)
+2024-06-25 16:05:05  [2024-06-25 16:05:05,072] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 0 from the shared memory into the storage CheckpointConfig(rank=0, group_rank=0, world_size=4, step=450, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000450/mp_rank_00_000/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000450/rank_00000/distrib_optim.pt'}).
+2024-06-25 16:05:05  [2024-06-25 16:05:05,072] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 1 from the shared memory into the storage CheckpointConfig(rank=1, group_rank=0, world_size=4, step=450, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000450/mp_rank_00_001/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000450/rank_00001/distrib_optim.pt'}).
+2024-06-25 16:05:05  [2024-06-25 16:05:05,073] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 2 from the shared memory into the storage CheckpointConfig(rank=2, group_rank=0, world_size=4, step=450, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000450/mp_rank_00_002/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000450/rank_00002/distrib_optim.pt'}).
+2024-06-25 16:05:05  [2024-06-25 16:05:05,073] [INFO] [ckpt_saver.py:637:_save_shard] Saves the checkpoint shard of rank 3 from the shared memory into the storage CheckpointConfig(rank=3, group_rank=0, world_size=4, step=450, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000450/mp_rank_00_003/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000450/rank_00003/distrib_optim.pt'}).
+2024-06-25 16:05:05  [2024-06-25 16:05:05,074] [INFO] [ckpt_saver.py:366:load_state_dict]  rank 0 Loading checkpoint at step 450, config: CheckpointConfig(rank=0, group_rank=0, world_size=4, step=300, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000300/mp_rank_00_000/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000300/rank_00000/distrib_optim.pt'})
+2024-06-25 16:05:05  [2024-06-25 16:05:05,075] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 1.
+2024-06-25 16:05:05  [2024-06-25 16:05:05,075] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 0.
+2024-06-25 16:05:05  [2024-06-25 16:05:05,076] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 2.
+2024-06-25 16:05:05  [2024-06-25 16:05:05,078] [ERROR] [ckpt_saver.py:377:load_state_dict] rank 1 Failed to load checkpoint at step 450, error: requested buffer length (51511296 * 4 bytes) after offset (5175733260 bytes) must not be greater than actual buffer length (5337824268 bytes)
+2024-06-25 16:05:05  [2024-06-25 16:05:05,079] [INFO] [ckpt_saver.py:366:load_state_dict]  rank 0 Loading checkpoint at step 400, config: CheckpointConfig(rank=0, group_rank=0, world_size=4, step=400, writing_shm=False, paths={'model_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000400/mp_rank_00_000/model_optim_rng.pt', 'optim_states': '/mnt/pengyanxin/mdl/my_megatron/checkpoints/iter_0000400/rank_00000/distrib_optim.pt'})
+2024-06-25 16:05:07  [2024-06-25 16:05:06,116] [INFO] [ckpt_saver.py:645:_save_shard] Finish saving the checkpoint shard of rank 3.
+2024-06-25 16:05:07  [2024-06-25 16:05:06,117] [INFO] [ckpt_saver.py:955:commit_checkpoint] All agents finish saving checkpoint for step 450
+2024-06-25 16:05:07  [2024-06-25 16:05:06,120] [INFO] [storage.py:171:commit] Succeed True in persisting the checkpoint of step 450.
+2024-06-25 16:05:09   iteration      460/  500000 | consumed samples:         7360 | elapsed time per iteration (ms): 308.1 | learning rate: 2.086E-05 | global batch size:    16 | lm loss: 7.017380E+00 | loss scale: 262144.0 | grad norm: 1.443 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:05:09  (min, max) time across ranks (ms):
+2024-06-25 16:05:09      evaluate .......................................: (495.12, 638.85)
+2024-06-25 16:05:09  -----------------------------------------------------------------------------------------------
+2024-06-25 16:05:09   validation loss at iteration 460 | lm loss value: 6.989517E+00 | lm loss PPL: 1.085197E+03 | 
+2024-06-25 16:05:09  -----------------------------------------------------------------------------------------------
+2024-06-25 16:05:13   iteration      470/  500000 | consumed samples:         7520 | elapsed time per iteration (ms): 308.8 | learning rate: 2.133E-05 | global batch size:    16 | lm loss: 6.966642E+00 | loss scale: 262144.0 | grad norm: 1.384 | number of skipped iterations:   0 | number of nan iterations:   0 |
+2024-06-25 16:05:13  (min, max) time across ranks (ms):
+2024-06-25 16:05:13      evaluate .......................................: (498.50, 632.96)
+2024-06-25 16:05:13  -----------------------------------------------------------------------------------------------
+2024-06-25 16:05:13   validation loss at iteration 470 | lm loss value: 6.986123E+00 | lm loss PPL: 1.081520E+03 | 
+2024-06-25 16:05:13  -----------------------------------------------------------------------------------------------

@@ -7,3 +7,9 @@ build
 slurm*
 logs
 .vscode
+checkpoints/
+ckpt_analysis/
+data/
+dist/
+gpt_data/
+
