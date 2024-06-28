@@ -1038,10 +1038,10 @@ def train(forward_step_func, model, optimizer, opt_param_scheduler,
                 exit = True
                 break
 
-        save_memory_interval = 20
-        if args.save and iteration % save_memory_interval == 0:
-            save_checkpoint(iteration, model, optimizer,
-                    opt_param_scheduler, num_floating_point_operations_so_far, storage_type=StorageType.MEMORY)
+        # save_memory_interval = 20
+        # if args.save and iteration % save_memory_interval == 0:
+        #     save_checkpoint(iteration, model, optimizer,
+        #             opt_param_scheduler, num_floating_point_operations_so_far, storage_type=StorageType.MEMORY)
             
         if args.save and args.save_interval and \
            iteration % args.save_interval == 0:

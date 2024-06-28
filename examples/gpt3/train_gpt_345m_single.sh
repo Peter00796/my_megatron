@@ -22,7 +22,7 @@ DISTRIBUTED_ARGS="
     --nnodes $NNODES \
     --node_rank $NODE_RANK \
     --master_addr $MASTER_ADDR \
-    --master_port $MASTER_PORT
+    --master_port $MASTER_PORT 
 "
 
 GPT_ARGS="
@@ -55,16 +55,16 @@ DATA_ARGS="
 "
 
 OUTPUT_ARGS="
-    --log-interval 50 \
-    --save-interval 50 \
-    --eval-interval 50 \
-    --eval-iters 50
+    --log-interval 10 \
+    --save-interval 20 \
+    --eval-interval 10 \
+    --eval-iters 10
 "
 
-dlrover-run $DISTRIBUTED_ARGS pretrain_gpt.py \
+dlrover-run --max_restarts=3 $DISTRIBUTED_ARGS pretrain_gpt.py \
     $GPT_ARGS \
     $DATA_ARGS \
     $OUTPUT_ARGS \
     --distributed-backend nccl \
     --save $CHECKPOINT_PATH \
-    --load $CHECKPOINT_PATH
+    --load $CHECKPOINT_PATH 
