@@ -4,7 +4,7 @@
 
 export CUDA_DEVICE_MAX_CONNECTIONS=1
 
-GPUS_PER_NODE=2
+GPUS_PER_NODE=4
 # Change for multinode config
 MASTER_ADDR=localhost
 MASTER_PORT=6000
@@ -26,8 +26,8 @@ DISTRIBUTED_ARGS="
 "
 
 GPT_ARGS="
-    --tensor-model-parallel-size 1 \
-    --pipeline-model-parallel-size 1 \
+    --tensor-model-parallel-size 2 \
+    --pipeline-model-parallel-size 2 \
     --sequence-parallel \
     --num-layers 24 \
     --hidden-size 1024 \
@@ -35,7 +35,7 @@ GPT_ARGS="
     --seq-length 1024 \
     --max-position-embeddings 1024 \
     --micro-batch-size 4 \
-    --global-batch-size 32 \
+    --global-batch-size 16 \
     --lr 0.00015 \
     --train-iters 500000 \
     --lr-decay-iters 320000 \
@@ -55,13 +55,13 @@ DATA_ARGS="
 "
 
 OUTPUT_ARGS="
-    --log-interval 20 \
+    --log-interval 50 \
     --save-interval 50 \
-    --eval-interval 20 \
-    --eval-iters 20
+    --eval-interval 50 \
+    --eval-iters 50
 "
 
-dlrover-run --max_restarts=1 $DISTRIBUTED_ARGS ../../pretrain_gpt.py \
+dlrover-run --max_restarts=3 $DISTRIBUTED_ARGS ../../pretrain_gpt.py \
     $GPT_ARGS \
     $DATA_ARGS \
     $OUTPUT_ARGS \

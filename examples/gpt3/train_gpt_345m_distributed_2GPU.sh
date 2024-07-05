@@ -14,7 +14,7 @@ WORLD_SIZE=$(($GPUS_PER_NODE*$NNODES))
 
 CHECKPOINT_PATH=/mnt/pengyanxin/mdl/my_megatron/checkpoints
 VOCAB_FILE=/mnt/pengyanxin/mdl/my_megatron/gpt_data/gpt2-vocab.json
-MERGE_FILE=/mnt/pengyanxin/mdl/my_megatron/gpt_data/gpt2-merges.txt
+MERGE_FILE=//mnt/pengyanxin/mdl/my_megatron/gpt_data/gpt2-merges.txt
 DATA_PATH=/mnt/pengyanxin/mdl/my_megatron/gpt_data/my-gpt2_text_document
 
 DISTRIBUTED_ARGS="
@@ -27,7 +27,7 @@ DISTRIBUTED_ARGS="
 
 GPT_ARGS="
     --tensor-model-parallel-size 1 \
-    --pipeline-model-parallel-size 1 \
+    --pipeline-model-parallel-size 2 \
     --sequence-parallel \
     --num-layers 24 \
     --hidden-size 1024 \
@@ -35,7 +35,7 @@ GPT_ARGS="
     --seq-length 1024 \
     --max-position-embeddings 1024 \
     --micro-batch-size 4 \
-    --global-batch-size 32 \
+    --global-batch-size 16 \
     --lr 0.00015 \
     --train-iters 500000 \
     --lr-decay-iters 320000 \
@@ -55,13 +55,13 @@ DATA_ARGS="
 "
 
 OUTPUT_ARGS="
-    --log-interval 20 \
+    --log-interval 50 \
     --save-interval 50 \
-    --eval-interval 20 \
-    --eval-iters 20
+    --eval-interval 50 \
+    --eval-iters 50
 "
 
-dlrover-run --max_restarts=1 $DISTRIBUTED_ARGS ../../pretrain_gpt.py \
+dlrover-run --max_restarts=3 $DISTRIBUTED_ARGS ../../pretrain_gpt.py \
     $GPT_ARGS \
     $DATA_ARGS \
     $OUTPUT_ARGS \

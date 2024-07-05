@@ -7,8 +7,10 @@ from abc import abstractmethod
 import time
 
 import torch
+import torch.distributed
+import logging
 
-
+logger = logging.getLogger(__name__)
 
 class TimerBase(ABC):
 
