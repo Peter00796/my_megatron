@@ -12,4 +12,5 @@ ckpt_analysis/
 data/
 dist/
 gpt_data/
-
+llama-2-7b-finetune/
+tensorboard/
