@@ -1,29 +1,31 @@
 #!/bin/bash
 
-DATASET_1="<PATH TO THE FIRST DATASET>"
-DATASET_2="<PATH TO THE SECOND DATASET>"
-DATASET_3="<PATH TO THE THIRD DATASET>"
+DATASET_1="/mnt/pengyanxin/Megatron-LLaMA/data/test_text_document"
+DATASET_2="/mnt/pengyanxin/Megatron-LLaMA/data/train_text_document"
+DATASET_3="/mnt/pengyanxin/Megatron-LLaMA/data/valid_text_document"
 DATASET="0.2 ${DATASET_1} 0.3 ${DATASET_2} 0.5 ${DATASET_3}"
 
+
 TP_SIZE=1
-PP_SIZE=1
-WORLD_SIZE=8
-MICRO_BATCH_SIZE=4
+PP_SIZE=4
+WORLD_SIZE=4
+MICRO_BATCH_SIZE=1
 # The int is the number of micro steps of gradient accumulation
-GLOBAL_BATCH_SIZE=$((($WORLD_SIZE * $MICRO_BATCH_SIZE) / ($TP_SIZE * $PP_SIZE) * 8))
-# GLOBAL_BATCH_SIZE=128
+# GLOBAL_BATCH_SIZE=$((($WORLD_SIZE * $MICRO_BATCH_SIZE) / ($TP_SIZE * $PP_SIZE) * 8))
+
+GLOBAL_BATCH_SIZE=8
 
 JOB_NAME="LLaMA_tp${TP_SIZE}_pp${PP_SIZE}_mbs${MICRO_BATCH_SIZE}_gpus${WORLD_SIZE}"
 
-LOAD_CHECKPOINT_PATH="PATH TO THE MODEL CHECKPOINT"
-SAVE_CHECKPOINT_PATH="PATH TO SAVE MODEL CHECKPOINT"
-TOKENIZER_PATH="PATH OR NAME FOR PRETRAINED TOKENIZER"
-TENSORBOARD_DIR="TENSORBOARD DIRECTORY"
+LOAD_CHECKPOINT_PATH="/mnt/pengyanxin/Megatron-LLaMA/checkpoints"
+SAVE_CHECKPOINT_PATH="/mnt/pengyanxin/Megatron-LLaMA/checkpoints"
+TOKENIZER_PATH="/mnt/pengyanxin/Megatron-LLaMA/meta-llama-local/Llama-2-7b-hf"
+TENSORBOARD_DIR="/mnt/pengyanxin/Megatron-LLaMA/tensorboard"
 
-TRAIN_ITERS=1000
+TRAIN_ITERS=100000
 EVAL_ITERS=10
 EVAL_INTERVAL=1000
-SAVE_INTERVAL=100
+SAVE_INTERVAL=1
 LOG_INTERVAL=1
 
 # Setting --tensorboard-queue-size to 1 significantly slows down the training
@@ -74,7 +76,6 @@ options=" \
     --save-interval ${SAVE_INTERVAL} \
         --save ${SAVE_CHECKPOINT_PATH} \
     --load ${LOAD_CHECKPOINT_PATH} \
-        --no-load-optim \
     --log-interval ${LOG_INTERVAL} \
     --tensorboard-dir ${TENSORBOARD_DIR} \
         --tensorboard-queue-size 1000 \
@@ -88,4 +89,4 @@ options=" \
     --use-flash-attn
     "
 
-torchrun --nproc_per_node=8 --master_port=29500 pretrain_llama.py ${options}
+torchrun --nproc_per_node=4 --master_port=29500 /mnt/pengyanxin/Megatron-LLaMA/pretrain_llama.py ${options}

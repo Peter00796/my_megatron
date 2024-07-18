@@ -703,7 +703,7 @@ def load_checkpoint(
         return 0
 
     # Set iteration.
-    if args.finetune or release:
+    if release:
         iteration = 0
     else:
         try:

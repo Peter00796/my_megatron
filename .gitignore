@@ -5,3 +5,12 @@ build
 *.egg-info
 *~
 *.DS_Store*
+megatron-ckpts/
+fine-tuned-ckpts/
+checkpoints/
+tensorboard/
+webtx_data/
+meta-llama-local/
+data/
+gpt_vocab/
+megrez_3b/
