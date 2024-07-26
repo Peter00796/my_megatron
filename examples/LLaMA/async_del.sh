@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIRECTORY="/mnt/public/pengyanxin/workspace/checkpoints"
+DIRECTORY="/mnt/pengyanxin/checkpoints"
 INTERVAL=60  # Check every 60 seconds
 MIN_CHECKPOINTS=5  # Minimum number of checkpoints to keep
 
