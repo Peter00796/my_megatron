@@ -1,8 +1,8 @@
 #!/bin/bash
 
-DIRECTORY="/mnt/pengyanxin/Megatron-LLaMA/checkpoints"
+DIRECTORY="/mnt/public/pengyanxin/workspace/checkpoints"
 INTERVAL=60  # Check every 60 seconds
-MIN_CHECKPOINTS=11  # Minimum number of checkpoints to keep
+MIN_CHECKPOINTS=5  # Minimum number of checkpoints to keep
 
 remove_oldest_checkpoint() {
     while true; do

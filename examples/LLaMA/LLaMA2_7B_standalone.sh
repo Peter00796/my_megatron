@@ -1,8 +1,8 @@
 #!/bin/bash
 
-DATASET_1="/mnt/pengyanxin/Megatron-LLaMA/data/test_text_document"
-DATASET_2="/mnt/pengyanxin/Megatron-LLaMA/data/train_text_document"
-DATASET_3="/mnt/pengyanxin/Megatron-LLaMA/data/valid_text_document"
+DATASET_1="/mnt/public/pengyanxin/workspace/train_data/test_text_document"
+DATASET_2="/mnt/public/pengyanxin/workspace/train_data/train_text_document"
+DATASET_3="/mnt/public/pengyanxin/workspace/train_data/valid_text_document"
 DATASET="0.2 ${DATASET_1} 0.3 ${DATASET_2} 0.5 ${DATASET_3}"
 
 
@@ -17,10 +17,10 @@ GLOBAL_BATCH_SIZE=8
 
 JOB_NAME="LLaMA_tp${TP_SIZE}_pp${PP_SIZE}_mbs${MICRO_BATCH_SIZE}_gpus${WORLD_SIZE}"
 
-LOAD_CHECKPOINT_PATH="/mnt/pengyanxin/Megatron-LLaMA/checkpoints"
-SAVE_CHECKPOINT_PATH="/mnt/pengyanxin/Megatron-LLaMA/checkpoints"
-TOKENIZER_PATH="/mnt/pengyanxin/Megatron-LLaMA/meta-llama-local/Llama-2-7b-hf"
-TENSORBOARD_DIR="/mnt/pengyanxin/Megatron-LLaMA/tensorboard"
+LOAD_CHECKPOINT_PATH="/mnt/public/pengyanxin/workspace/my_megatron/megatron-ckpts"
+SAVE_CHECKPOINT_PATH="/mnt/public/pengyanxin/workspace/checkpoints"
+TOKENIZER_PATH="/mnt/resource/public_models/Llama-2-7b-hf"
+TENSORBOARD_DIR="/mnt/public/pengyanxin/workspace/my_megatron/tensorboard"
 
 TRAIN_ITERS=100000
 EVAL_ITERS=10
@@ -30,7 +30,6 @@ LOG_INTERVAL=1
 
 # Setting --tensorboard-queue-size to 1 significantly slows down the training
 options=" \
-    --finetune \
     --sequence-parallel \
         --tensor-model-parallel-size ${TP_SIZE} \
         --pipeline-model-parallel-size ${PP_SIZE} \
@@ -89,4 +88,4 @@ options=" \
     --use-flash-attn
     "
 
-torchrun --nproc_per_node=4 --master_port=29500 /mnt/pengyanxin/Megatron-LLaMA/pretrain_llama.py ${options}
+torchrun --nproc_per_node=4 --master_port=29500 /mnt/public/pengyanxin/workspace/my_megatron/pretrain_llama.py ${options}
