@@ -301,7 +301,7 @@ def model_diff(base_model, new_model):
             elif isinstance(base_model[key], torch.Tensor) and isinstance(new_model[key], torch.Tensor):
                 diff_state_dict[key] = new_model[key] - base_model[key]
             else:
-                raise ValueError(f"Mismatched types for key '{key}' in base and new model")
+                raise ValueError(f"Mismatched types for key '{key}' in base and new model, base has the type {type(base_model[key])} and new has the type {type(new_model[key])}")
         else:
             raise ValueError(f"Key '{key}' not found in new model")
     return diff_state_dict
@@ -375,27 +375,27 @@ def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
         # we do sparsification on model and quantization on optimizer state.
 
         
-        if INTERVALS_SINCE_LAST_BASE_CHECKPOINT == MAX_CACHED_ITERATIONS:
-            # we need to store a new base checkpoint
-            # we need to reset the ITERATION_SINCE_LAST_BASE_CHECKPOINT
-            INTERVALS_SINCE_LAST_BASE_CHECKPOINT = 0
-            # since we store a base checkpoint, which is the same as storing a normal checkpoint, so just simply set the state_dict to the checkpoint
-        else: 
-            # we need to store a sparse checkpoint incrementation
-            # we need to first retrieve that old base checkpoint 
-            iteration = iteration - INTERVALS_SINCE_LAST_BASE_CHECKPOINT * args.save_interval 
-            base_ckpt_state_dict = _load_base_checkpoint(args.save, exit_on_missing_checkpoint=True, checkpoint_step=iteration)
+        # if INTERVALS_SINCE_LAST_BASE_CHECKPOINT == MAX_CACHED_ITERATIONS:
+        #     # we need to store a new base checkpoint
+        #     # we need to reset the ITERATION_SINCE_LAST_BASE_CHECKPOINT
+        #     INTERVALS_SINCE_LAST_BASE_CHECKPOINT = 0
+        #     # since we store a base checkpoint, which is the same as storing a normal checkpoint, so just simply set the state_dict to the checkpoint
+        # else: 
+        #     # we need to store a sparse checkpoint incrementation
+        #     # we need to first retrieve that old base checkpoint 
+        #     iteration = iteration - INTERVALS_SINCE_LAST_BASE_CHECKPOINT * args.save_interval 
+        #     base_ckpt_state_dict = _load_base_checkpoint(args.save, exit_on_missing_checkpoint=True, checkpoint_step=iteration)
 
-            base_model = base_ckpt_state_dict['model']
-            new_model = state_dict['model']
+        #     base_model = base_ckpt_state_dict['model']
+        #     new_model = state_dict['model']
 
-            diff_model = model_diff(base_model, new_model)
+        #     diff_model = model_diff(base_model, new_model)
 
-            # now we need to iterate through the diff_model and perform sparsification
+        #     # now we need to iterate through the diff_model and perform sparsification
 
 
-            # we need to increment the ITERATION_SINCE_LAST_BASE_CHECKPOINT
-            INTERVALS_SINCE_LAST_BASE_CHECKPOINT += 1
+        #     # we need to increment the ITERATION_SINCE_LAST_BASE_CHECKPOINT
+        #     INTERVALS_SINCE_LAST_BASE_CHECKPOINT += 1
             
             
 
