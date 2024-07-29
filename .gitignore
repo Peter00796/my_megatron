@@ -12,3 +12,5 @@ checkpoints/
 gpt_data/
 data/
 
+examples/gpt3/checkpoints/
+examples/gpt3/gpt-345m-ckpts/

@@ -8,7 +8,7 @@ import sys
 import numpy as np
 
 import torch
-
+from megatron.training.sparse_utils import print_info
 from megatron.training import update_num_microbatches
 from megatron.core import mpu, tensor_parallel, dist_checkpointing
 from megatron.core.dist_checkpointing.mapping import ShardedObject
@@ -35,6 +35,12 @@ except Exception:
 
 _CHECKPOINT_VERSION = None
 
+# this paramteres means that we have one base checkpoint and then store the sparse checkpoint incrementation for 3 iterations
+# this parameter is used to store the sparse checkpoint incrementation for 3 iterations in save_checkpoint function
+MAX_CACHED_ITERATIONS = 3
+# this parameter means the iteration number since the last base checkpoint 
+# when we store a new checkpoint, we check this parameter, if it is equal to MAX_CACHED_ITERATIONS, we store a new base checkpoint and reset this parameter to 0 
+INTERVALS_SINCE_LAST_BASE_CHECKPOINT = 0
 
 def set_checkpoint_version(value):
     global _CHECKPOINT_VERSION
@@ -198,6 +204,9 @@ def get_checkpoint_tracker_filename(checkpoints_path):
     training to restart from."""
     return os.path.join(checkpoints_path, 'latest_checkpointed_iteration.txt')
 
+def look_for_base_checkpoint(checkpoints_path, iteration):
+    if checkpoints_path is None: 
+        return os.path.exists(os.path.join(checkpoints_path, iteration))
 
 def checkpoint_exists(checkpoints_path):
     if checkpoints_path is None:
@@ -280,7 +289,35 @@ def get_rng_state(use_dist_ckpt: bool = False):
 
     return rng_state_list
 
+def model_diff(base_model, new_model):
+    # this function is used to calculate the difference between the base model and the new model
+    # since the two models are of the same format, we iterate through them together, and when reaching a tensor, we calculate the difference between the two tensors
+    diff_state_dict = {} 
+    for key in base_model:
+        if key in new_model:
+            if isinstance(base_model[key], dict) and isinstance(new_model[key], dict):
+                diff_state_dict[key] = {}
+                model_diff(base_model[key], new_model[key])
+            elif isinstance(base_model[key], torch.Tensor) and isinstance(new_model[key], torch.Tensor):
+                diff_state_dict[key] = new_model[key] - base_model[key]
+            else:
+                raise ValueError(f"Mismatched types for key '{key}' in base and new model")
+        else:
+            raise ValueError(f"Key '{key}' not found in new model")
+    return diff_state_dict
 
+def sparsification(diff_model):
+    # this function is used to perform sparsification on the diff_model
+    # we need to iterate through the diff_model and perform sparsification on the tensors
+    sparse_model = {}
+    for key in diff_model:
+        if isinstance(diff_model[key], dict):
+            sparsification(diff_model[key])
+        elif isinstance(diff_model[key], torch.Tensor):
+            # we need to perform sparsification on the tensor
+            sparse_model[key] = diff_model[key].to_sparse()
+
+    
 def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
                     num_floating_point_operations_so_far, checkpointing_context=None):
     """Save a model checkpoint.
@@ -332,6 +369,54 @@ def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
                                          args.use_dist_ckpt, iteration, optim_sd_kwargs=optim_sd_kwargs)
 
         state_dict['num_floating_point_operations_so_far'] = num_floating_point_operations_so_far
+
+        # here we already got the state_dict for the model 
+        # now we need to perform our logic to quantize the model and the optimizer state
+        # we do sparsification on model and quantization on optimizer state.
+
+        
+        if INTERVALS_SINCE_LAST_BASE_CHECKPOINT == MAX_CACHED_ITERATIONS:
+            # we need to store a new base checkpoint
+            # we need to reset the ITERATION_SINCE_LAST_BASE_CHECKPOINT
+            INTERVALS_SINCE_LAST_BASE_CHECKPOINT = 0
+            # since we store a base checkpoint, which is the same as storing a normal checkpoint, so just simply set the state_dict to the checkpoint
+        else: 
+            # we need to store a sparse checkpoint incrementation
+            # we need to first retrieve that old base checkpoint 
+            iteration = iteration - INTERVALS_SINCE_LAST_BASE_CHECKPOINT * args.save_interval 
+            base_ckpt_state_dict = _load_base_checkpoint(args.save, exit_on_missing_checkpoint=True, checkpoint_step=iteration)
+
+            base_model = base_ckpt_state_dict['model']
+            new_model = state_dict['model']
+
+            diff_model = model_diff(base_model, new_model)
+
+            # now we need to iterate through the diff_model and perform sparsification
+
+
+            # we need to increment the ITERATION_SINCE_LAST_BASE_CHECKPOINT
+            INTERVALS_SINCE_LAST_BASE_CHECKPOINT += 1
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        print_info(state_dict)
+
         if args.use_dist_ckpt:
             if not torch.distributed.is_initialized() or torch.distributed.get_rank() == 0:
                 ensure_directory_exists(checkpoint_name, check_parent=False)

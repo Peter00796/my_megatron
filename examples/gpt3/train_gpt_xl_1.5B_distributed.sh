@@ -4,7 +4,7 @@
 
 export CUDA_DEVICE_MAX_CONNECTIONS=1
 
-GPUS_PER_NODE=1
+GPUS_PER_NODE=4
 # Change for multinode config
 MASTER_ADDR=localhost
 MASTER_PORT=6000
@@ -12,7 +12,7 @@ NNODES=1
 NODE_RANK=0
 WORLD_SIZE=$(($GPUS_PER_NODE*$NNODES))
 
-CHECKPOINT_PATH=/mnt/pengyanxin/my_megatron/examples/gpt3/gpt-345m-ckpts
+CHECKPOINT_PATH=/mnt/pengyanxin/checkpoints
 VOCAB_FILE=/mnt/pengyanxin/gpt_vocab/gpt2-vocab.json
 MERGE_FILE=/mnt/pengyanxin/gpt_vocab/gpt2-merges.txt
 DATA_PATH=/mnt/pengyanxin/data/output/output_text_document
@@ -26,23 +26,25 @@ DISTRIBUTED_ARGS="
 "
 
 GPT_ARGS="
-    --tensor-model-parallel-size 1 \
-    --pipeline-model-parallel-size 1 \
+    --tensor-model-parallel-size 2 \
+    --pipeline-model-parallel-size 2 \
     --sequence-parallel \
-    --num-layers 24 \
-    --hidden-size 1024 \
+    --num-layers 48 \
+    --hidden-size 2048 \
     --num-attention-heads 16 \
     --seq-length 1024 \
     --max-position-embeddings 1024 \
     --micro-batch-size 4 \
     --global-batch-size 16 \
-    --lr 0.00015 \
+    --adam-beta1 0.9 \
+    --adam-beta2 0.95 \
+    --lr 0.0015 \
     --train-iters 500000 \
     --lr-decay-iters 320000 \
     --lr-decay-style cosine \
-    --min-lr 6.0e-6 \
+    --min-lr 1.0e-5 \
     --weight-decay 1e-2 \
-    --lr-warmup-fraction .001 \
+    --lr-warmup-fraction .01 \
     --clip-grad 1.0 \
     --fp16
 "
@@ -56,9 +58,9 @@ DATA_ARGS="
 
 OUTPUT_ARGS="
     --log-interval 10 \
-    --save-interval 10 \
-    --eval-interval 5 \
-    --eval-iters 10
+    --save-interval 500 \
+    --eval-interval 100 \
+    --eval-iters 100
 "
 
 torchrun $DISTRIBUTED_ARGS /mnt/pengyanxin/my_megatron/pretrain_gpt.py \
