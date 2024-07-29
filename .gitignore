@@ -14,3 +14,4 @@ dist/
 gpt_data/
 llama-2-7b-finetune/
 tensorboard/
+examples/gpt3/gpt-345m-ckpts/
