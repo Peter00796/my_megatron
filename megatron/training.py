@@ -31,13 +31,13 @@ from megatron.core import mpu, tensor_parallel
 from megatron.core.utils import get_model_config
 from megatron import print_rank_0
 from megatron import print_rank_last
-# from megatron.checkpointing import load_checkpoint
-# from megatron.checkpointing import save_checkpoint
+from megatron.checkpointing import load_checkpoint
+from megatron.checkpointing import save_checkpoint
 
 
-from dlrover.trainer.torch.flash_checkpoint.megatron_dist_ckpt import save_checkpoint
-from dlrover.trainer.torch.flash_checkpoint.megatron_dist_ckpt import load_checkpoint
-from dlrover.trainer.torch.flash_checkpoint.megatron import StorageType
+# from dlrover.trainer.torch.flash_checkpoint.megatron_dist_ckpt import save_checkpoint
+# from dlrover.trainer.torch.flash_checkpoint.megatron_dist_ckpt import load_checkpoint
+# from dlrover.trainer.torch.flash_checkpoint.megatron import StorageType
 
 
 from megatron.model import Float16Module

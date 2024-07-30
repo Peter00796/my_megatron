@@ -14,10 +14,17 @@ from megatron.core import mpu, tensor_parallel
 from .global_vars import get_args
 from .utils import (unwrap_model,
                     print_rank_0)
-
+from scipy.sparse import csr_matrix
+# from ...adamint8bit.kmeans_experiment.exp_w.clusterer import Clusterer
+# from ...adamint8bit.kmeans_experiment.exp_w.quantizer import Quantizer, FP16Quantizer, Int8BlockwiseQuantizer, Int8DynamicQuantizer, Int8NaiveQuantizer
 
 _CHECKPOINT_VERSION = None
-
+# this paramteres means that we have one base checkpoint and then store the sparse checkpoint incrementation for 3 iterations
+# this parameter is used to store the sparse checkpoint incrementation for 3 iterations in save_checkpoint function
+MAX_CACHED_ITERATIONS = 3
+# this parameter means the iteration number since the last base checkpoint 
+# when we store a new checkpoint, we check this parameter, if it is equal to MAX_CACHED_ITERATIONS, we store a new base checkpoint and reset this parameter to 0 
+INTERVALS_SINCE_LAST_BASE_CHECKPOINT = 0
 
 def set_checkpoint_version(value):
     global _CHECKPOINT_VERSION
@@ -237,6 +244,74 @@ def get_rng_state():
 
     return rng_state_list
 
+def model_diff(base_model, new_model, diff_state_dict):
+    # this function is used to calculate the difference between the base model and the new model
+    # since the two models are of the same format, we iterate through them together, and when reaching a tensor, we calculate the difference between the two tensors
+    for key in base_model.keys():
+        if key in new_model.keys():
+            if isinstance(base_model[key], dict) and isinstance(new_model[key], dict):
+                diff_state_dict[key] = {}
+                model_diff(base_model[key], new_model[key], diff_state_dict[key])
+            elif isinstance(base_model[key], torch.Tensor) and isinstance(new_model[key], torch.Tensor):
+                diff_state_dict[key] = new_model[key] - base_model[key]
+            # another situation is that both base_model[key] and new_model[key] are NoneType, in this case, skip this iteration
+            elif base_model[key] is None and new_model[key] is None:
+                diff_state_dict[key] = None
+            else:
+                raise ValueError(f"Mismatched types for key '{key}' in base and new model, base has the type {type(base_model[key])} and new has the type {type(new_model[key])}")
+        else:
+            raise ValueError(f"Key '{key}' not found in new model")
+
+
+def compress_indices(indices, dtype=torch.int32):
+    # Compress indices to a specified lower-bit integer type
+    return indices.to(dtype)
+
+def decompress_indices(indices, dtype=torch.int64):
+    # Decompress indices back to int64
+    return indices.to(dtype)
+
+def sparsification(diff_model, sparse_model):
+    # This function is used to perform sparsification on the diff_model
+    # We need to iterate through the diff_model and perform sparsification on the tensors
+    for key in diff_model:
+        if isinstance(diff_model[key], dict):
+            sparse_model[key] = {}
+            sparsification(diff_model[key], sparse_model[key])
+        elif isinstance(diff_model[key], torch.Tensor):
+            # Perform sparsification using COO format
+            tensor = diff_model[key].to_sparse()
+            indices = tensor.indices()
+            values = tensor.values()
+            indices_numpy = indices.cpu().numpy()
+            # Compress indices for storage or transmission
+            compressed_indices = indices_numpy.astype(np.uint16)
+            # compressed_indices = compress_indices(indices, dtype=torch.uint16)
+            # Store the compressed indices and values
+            sparse_model[key] = {
+                "size": tensor.size(),
+                "compressed_indices": compressed_indices,
+                "values": values
+            }
+
+        elif diff_model[key] is None:
+            sparse_model[key] = None
+
+
+def csr_sparsification(diff_model, sparse_model):
+    for key in diff_model:
+        if isinstance(diff_model[key], dict):
+            sparse_model[key] = {}
+            sparsification(diff_model[key], sparse_model[key])
+        elif isinstance(diff_model[key], torch.Tensor):
+            numpy_array = diff_model[key].numpy()
+            csr = csr_matrix(numpy_array)
+            csr.indices = csr.indices.astype(np.uint16)
+            csr.indptr = csr.indptr.astype(np.uint16)
+            sparse_model[key] = csr
+        elif diff_model[key] is None:
+            sparse_model[key] = None
+
 
 def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
                     num_floating_point_operations_so_far):
@@ -291,6 +366,73 @@ def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
         # RNG states.
         if not args.no_save_rng:
             state_dict["rng_state"] = rng_state
+
+
+        # if INTERVALS_SINCE_LAST_BASE_CHECKPOINT == MAX_CACHED_ITERATIONS:
+        #     # we need to store a new base checkpoint
+        #     # we need to reset the ITERATION_SINCE_LAST_BASE_CHECKPOINT to 0 to indicate that we start from a new base checkpoint
+        #     INTERVALS_SINCE_LAST_BASE_CHECKPOINT = 0
+        #     # since we store a base checkpoint, which is the same as storing a normal checkpoint, so just simply set the state_dict to the checkpoint
+        # else: 
+        #     # first we deal with the model part
+        #     # we need to store a sparse checkpoint incrementation
+        #     # we need to first retrieve that old base checkpoint 
+            
+        #     # first obtain the iteration number by subtracting the current iteration with the number of intervals times the save_interval since the last base checkpoint
+        #     iteration = iteration - INTERVALS_SINCE_LAST_BASE_CHECKPOINT * args.save_interval 
+        #     base_ckpt_state_dict = _load_base_checkpoint(args.save, exit_on_missing_checkpoint=True, checkpoint_step=iteration)
+
+        #     base_model = base_ckpt_state_dict['model']
+        #     new_model = state_dict['model']
+
+
+        #     diff_model_state_dict = {}
+        #     model_diff(base_model, new_model, diff_model_state_dict)
+
+        #     sparse_model_state_dict = {}
+        #     sparsification(diff_model_state_dict, sparse_model_state_dict)
+
+        #     state_dict['model'] = sparse_model_state_dict
+
+            # optimizer
+
+
+
+
+
+
+            # now we need to iterate through the diff_model and perform sparsification
+
+
+            # we need to increment the ITERATION_SINCE_LAST_BASE_CHECKPOINT
+            # INTERVALS_SINCE_LAST_BASE_CHECKPOINT += 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         # Save.
         ensure_directory_exists(checkpoint_name)
