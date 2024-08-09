@@ -11,7 +11,7 @@ WORLD_SIZE=$(($GPUS_PER_NODE*$NNODES))
 CHECKPOINT_PATH=/mnt/pengyanxin/my_megatron/examples/gpt3/gpt2_345m
 VOCAB_FILE=/mnt/pengyanxin/gpt_vocab/gpt2-vocab.json
 MERGE_FILE=/mnt/pengyanxin/gpt_vocab/gpt2-merges.txt
-DATA_PATH=/mnt/pengyanxin/data/output/output_text_document
+DATA_PATH=/mnt/pengyanxin/data/webtext/webtext_text_sentence
 
 DISTRIBUTED_ARGS="
     --nproc_per_node $GPUS_PER_NODE \
@@ -32,28 +32,28 @@ GPT_ARGS="
     --max-position-embeddings 1024 \
     --micro-batch-size 4 \
     --global-batch-size 16 \
-    --lr 1.5e-4 \
+    --lr 6.0e-5  \
     --train-iters 500000 \
-    --lr-decay-iters 320000 \
+    --lr-decay-iters 1 \
     --lr-decay-style cosine \
     --min-lr 6.0e-6 \
     --weight-decay 1e-2 \
-    --lr-warmup-fraction .001 \
+    --lr-warmup-fraction 0.0 \
     --clip-grad 1.0 \
-    --fp16
+    --fp16 \
 "
 
 DATA_ARGS="
     --data-path $DATA_PATH \
     --vocab-file $VOCAB_FILE \
     --merge-file $MERGE_FILE \
-    --split 800,100,100
+    --split 949,50,1
 "
 
 OUTPUT_ARGS="
     --log-interval 1 \
     --save-interval 1 \
-    --eval-interval 10 \
+    --eval-interval 1 \
     --eval-iters 1
 "
 
