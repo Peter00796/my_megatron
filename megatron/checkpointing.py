@@ -6,7 +6,7 @@ import os
 import random
 import sys
 import numpy as np
-
+import time
 import torch
 
 from megatron import update_num_microbatches
@@ -249,6 +249,7 @@ def get_rng_state():
 def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
                     num_floating_point_operations_so_far):
     """Save a model checkpoint."""
+    start_time = time.time()
     args = get_args()
 
     # Only rank zero of the data parallel writes to the disk.
@@ -319,12 +320,23 @@ def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
                 latest_iteration = int(lines[0].strip())
                 latest_base_iteration = int(lines[1].strip())
                 delta_count = int(lines[2].strip())
-        
+
+        dir_path = os.path.join(args.save, f"iter_{iteration}")
+        meta_path = os.path.join(dir_path, "type.txt")
+
         if delta_count >= MAX_CACHED_ITERATIONS or not os.path.exists(latest_info_path):
+            """
+            if the delta_count is equal to MAX_CACHED_ITERATIONS, then we need to store a new BASE checkpoint
+            """
             print(f"saving the normal base checkpoint, update the latest base iteration from {latest_base_iteration} to {iteration}")
             latest_base_iteration = iteration
             delta_count = 0
+            with open(meta_path, "w") as f:
+                f.write("base")
         else:
+            """
+            if the delta_count is less than MAX_CACHED_ITERATIONS, then we need to store a new DELTA checkpoint
+            """
             print(f"saving the delta checkpoint, the base iteration is {latest_base_iteration}")
             checkpoint_path = get_checkpoint_name(args.save, iteration)
             base_model_path = os.path.join(args.save, checkpoint_path)
@@ -340,7 +352,6 @@ def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
                 # generate the bitmask
                 bitmask = generate_bitmask(diff_model)
                 # Here I wish to modify this: to make the base operation and the delta operation differentiable
-                delta_path = os.path.join(args.save, f"iter_{iteration}.pt")
 
                 sparse_delta_with_bitmask = generate_sparse_delta_with_bitmask(diff_model, bitmask)
 
@@ -348,47 +359,28 @@ def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
                 state_dict['model'] = sparse_delta_with_bitmask
 
                 delta_count += 1
+
+                with open(meta_path, "w") as f:
+                    f.write("delta")
+                
             else:
                 print(f"the base model does not exist, saving the normal base checkpoint")
                 latest_base_iteration = iteration
                 delta_count = 0
+                with open(meta_path, "w") as f:
+                    f.write("base")
+
 
         with open(latest_info_path, "w") as f: 
             f.write(f"{iteration}\n")
             f.write(f"{latest_base_iteration}\n")
             f.write(f"{delta_count}\n")
 
-
-
-
-                
-                
-                
-                        
         
-        # generate the bitmask
+        end_time = time.time()
+        print(f"Save style is {'base' if delta_count == 0 else 'delta'}. Time consumed in I/O operation is {end_time - start_time}")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        # Save.
+        # Save the checkpoint.
         ensure_directory_exists(checkpoint_name)
         torch.save(state_dict, checkpoint_name)
 
@@ -619,7 +611,25 @@ def load_args_from_checkpoint(args, load_arg='load'):
         _set_arg('num_layers_per_virtual_pipeline_stage')
     return args, checkpoint_args
 
+def _get_latest_iteration_and_type(load_dir):
+    tracker_filename = get_checkpoint_tracker_filename(load_dir)
+    iteration, _ = read_metadata(tracker_filename)
+    checkpoint_dir = os.path.join(load_dir, f"iter_{iteration:07d}")
+    type_path = os.path.join(checkpoint_dir, "type.txt")
+    with open(type_path, "r") as f:
+        checkpoint_type = f.read().strip()
+        
+    return iteration, checkpoint_type
 
+def _get_base_info(load_dir):
+    latest_info_path = os.path.join(load_dir, "latest_info.txt")
+    if not os.path.exists(latest_info_path):
+        raise ValueError(f"the latest_info.txt does not exist in {load_dir}")
+    with open(latest_info_path, 'r') as f:
+        lines = f.readlines()
+        latest_base_iteration = int(lines[1].strip())
+    return latest_base_iteration
+    
 def load_checkpoint(model, optimizer, opt_param_scheduler, load_arg='load', strict=True):
     """Load a model checkpoint and return the iteration.
     strict (bool): whether to strictly enforce that the keys in
@@ -631,6 +641,40 @@ def load_checkpoint(model, optimizer, opt_param_scheduler, load_arg='load', stri
 
     model = unwrap_model(model)
 
+    iteration, checkpoint_type = _get_latest_iteration_and_type(load_dir)
+    
+    if checkpoint_type == "base":
+        state_dict, checkpoint_name, release = _load_base_checkpoint(load_dir, rank0=False)
+    elif checkpoint_type == "delta":
+        # load base checkpoint first
+        base_iteration = _get_base_info(load_dir)
+        base_checkpoint_name = get_checkpoint_name(load_dir,base_iteration)
+        state_dict = torch.load(base_checkpoint_name, map_location='cpu')
+        
+        #load the delta checkpoint and apply it on the base
+        delta_checkpoint_name = get_checkpoint_name(load_dir, iteration)
+        delta_state_dict = torch.load(delta_checkpoint_name, map_location='cpu')
+        state_dict['model'] = reconstruct_checkpoint_with_bitmask(state_dict['model'], delta_state_dict['model'])
+        release = False
+    else:
+        print(f"Unknown checkpoint type {checkpoint_type}, existing")
+        sys.exit()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     state_dict, checkpoint_name, release = _load_base_checkpoint(load_dir, rank0=False)
 
     # Checkpoint not loaded.
