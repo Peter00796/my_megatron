@@ -15,7 +15,7 @@ from .global_vars import get_args
 from .utils import (unwrap_model,
                     print_rank_0)
 from scipy.sparse import csr_matrix
-from sparse_utils import generate_bitmask, generate_sparse_delta_with_bitmask, reconstruct_checkpoint_with_bitmask, model_diff
+from .sparse_utils import generate_bitmask, generate_sparse_delta_with_bitmask, reconstruct_checkpoint_with_bitmask, model_diff
 # from ...adamint8bit.kmeans_experiment.exp_w.clusterer import Clusterer
 # from ...adamint8bit.kmeans_experiment.exp_w.quantizer import Quantizer, FP16Quantizer, Int8BlockwiseQuantizer, Int8DynamicQuantizer, Int8NaiveQuantizer
 
@@ -245,6 +245,18 @@ def get_rng_state():
 
     return rng_state_list
 
+def _move_to_cpu(state_dict):
+    """
+    recursively move all tensors in the state_dict to CPU
+    """
+    if isinstance(state_dict, dict): 
+        return {k: _move_to_cpu(v) for k, v in state_dict.items()}
+    elif isinstance(state_dict, list):
+        return [_move_to_cpu(v) for v in state_dict]
+    elif isinstance(state_dict, torch.Tensor):
+        return state_dict.cpu()
+    else: 
+        return state_dict
 
 def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
                     num_floating_point_operations_so_far):
@@ -300,12 +312,6 @@ def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
         # RNG states.
         if not args.no_save_rng:
             state_dict["rng_state"] = rng_state
-
-
-        # performing the bitmask operation
-
-        
-        uncompressed_model = state_dict['model']
         
         # get the path of the latest_info.txt first
         latest_info_path = os.path.join(args.save, "latest_info.txt")
@@ -315,14 +321,17 @@ def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
         
         # if the file exists here, then we go and fetch the latest_base_iteration and delta_count
         if os.path.exists(latest_info_path):
-            lines = f.readlines()
-            if len(lines) >= 2:
-                latest_iteration = int(lines[0].strip())
-                latest_base_iteration = int(lines[1].strip())
-                delta_count = int(lines[2].strip())
+            with open(latest_info_path, 'r') as f:
+                lines = f.readlines()
+                if len(lines) >= 2:
+                    latest_iteration = int(lines[0].strip())
+                    latest_base_iteration = int(lines[1].strip())
+                    delta_count = int(lines[2].strip())
 
-        dir_path = os.path.join(args.save, f"iter_{iteration}")
+        dir_path = os.path.join(args.save, 'iter_{:07d}'.format(iteration))
         meta_path = os.path.join(dir_path, "type.txt")
+        
+        ensure_directory_exists(meta_path)
 
         if delta_count >= MAX_CACHED_ITERATIONS or not os.path.exists(latest_info_path):
             """
@@ -338,26 +347,31 @@ def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
             if the delta_count is less than MAX_CACHED_ITERATIONS, then we need to store a new DELTA checkpoint
             """
             print(f"saving the delta checkpoint, the base iteration is {latest_base_iteration}")
-            checkpoint_path = get_checkpoint_name(args.save, iteration)
+            checkpoint_path = get_checkpoint_name(args.save, latest_base_iteration)
+
             base_model_path = os.path.join(args.save, checkpoint_path)
+            print(f"the base_model_path is {base_model_path}")
             # if the base model exists, then we can generate the bitmask and save the delta
             if os.path.exists(base_model_path):
                 base_state_dict = torch.load(base_model_path, map_location='cpu')
                 base_model = base_state_dict['model']
-                new_model = state_dict['model']
+                start_cpu_time = time.time()
+                new_model_cpu = _move_to_cpu(state_dict['model'])
+                end_cpu_time = time.time()
+                print(f"Time consumed in moving the model to cpu is {end_cpu_time - start_cpu_time}")
+
                 ################### OPTIMIZATION POINT ###################
                 # Could start another process / daemon to do this
-                diff_model = model_diff(base_model, new_model)
+                diff_model = {}
+
+                model_diff(base_model, new_model_cpu, diff_model)
                 
                 # generate the bitmask
-                bitmask = generate_bitmask(diff_model)
+                bitmask = {} 
+                generate_bitmask(diff_model, bitmask)
                 # Here I wish to modify this: to make the base operation and the delta operation differentiable
-
-                sparse_delta_with_bitmask = generate_sparse_delta_with_bitmask(diff_model, bitmask)
-
                 # we only need to change the original model to the sparse_delta_with_bitmask and then store it
-                state_dict['model'] = sparse_delta_with_bitmask
-
+                state_dict['model'] = generate_sparse_delta_with_bitmask(diff_model, bitmask)
                 delta_count += 1
 
                 with open(meta_path, "w") as f:
@@ -614,7 +628,7 @@ def load_args_from_checkpoint(args, load_arg='load'):
 def _get_latest_iteration_and_type(load_dir):
     tracker_filename = get_checkpoint_tracker_filename(load_dir)
     iteration, _ = read_metadata(tracker_filename)
-    checkpoint_dir = os.path.join(load_dir, f"iter_{iteration:07d}")
+    checkpoint_dir = os.path.join(load_dir, 'iter_{:07d}'.format(iteration))
     type_path = os.path.join(checkpoint_dir, "type.txt")
     with open(type_path, "r") as f:
         checkpoint_type = f.read().strip()
@@ -659,23 +673,6 @@ def load_checkpoint(model, optimizer, opt_param_scheduler, load_arg='load', stri
     else:
         print(f"Unknown checkpoint type {checkpoint_type}, existing")
         sys.exit()
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    state_dict, checkpoint_name, release = _load_base_checkpoint(load_dir, rank0=False)
 
     # Checkpoint not loaded.
     if state_dict is None:

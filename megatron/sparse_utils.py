@@ -1,11 +1,10 @@
 import torch
 import numpy as np
 
-def generate_bitmask(delta):
+def generate_bitmask(delta, bitmasks):
     """
     This function is used for generating the bitmasks for the delta
     """
-    bitmasks = {} 
     for key, value in delta.items():
         if isinstance(value, dict):
             bitmasks[key] = {}
@@ -17,7 +16,6 @@ def generate_bitmask(delta):
             bitmasks[key] = None
         else:
             raise ValueError(f"Unsupported type for key '{key}': {type(value)}")
-    return bitmasks
 
 
 def _compress_bitmask(bitmask):
@@ -89,11 +87,10 @@ def reconstruct_checkpoint_with_bitmask(previous_checkpoint, sparse_delta_with_b
 
     return process_reconstruction(previous_checkpoint, sparse_delta_with_bitmask)
 
-def model_diff(base_model, new_model):
+def model_diff(base_model, new_model, diff_state_dict):
     """
     This function is used to compute the difference between the base model and the new model
     """
-    diff_state_dict = {}
     for key in base_model.keys():
         if key in new_model.keys():
             if isinstance(base_model[key], dict) and isinstance(new_model[key], dict):
@@ -107,4 +104,3 @@ def model_diff(base_model, new_model):
                 raise ValueError(f"Mismatched types for key '{key}' in base and new model, base has the type {type(base_model[key])} and new has the type {type(new_model[key])}")
         else:
             raise ValueError(f"Key '{key}' not found in new model")
-    return diff_state_dict
