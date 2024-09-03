@@ -261,7 +261,7 @@ def _move_to_cpu(state_dict):
 def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
                     num_floating_point_operations_so_far):
     """Save a model checkpoint."""
-    start_time = time.time()
+    
     args = get_args()
 
     # Only rank zero of the data parallel writes to the disk.
@@ -362,6 +362,7 @@ def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
 
                 ################### OPTIMIZATION POINT ###################
                 # Could start another process / daemon to do this
+                delta_encode_start = time.time()
                 diff_model = {}
 
                 model_diff(base_model, new_model_cpu, diff_model)
@@ -376,6 +377,8 @@ def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
 
                 with open(meta_path, "w") as f:
                     f.write("delta")
+                delta_encode_end = time.time()
+                print(f"Time consumed in delta encoding is {delta_encode_end - delta_encode_start}")
                 
             else:
                 print(f"the base model does not exist, saving the normal base checkpoint")
@@ -390,13 +393,12 @@ def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
             f.write(f"{latest_base_iteration}\n")
             f.write(f"{delta_count}\n")
 
-        
-        end_time = time.time()
-        print(f"Save style is {'base' if delta_count == 0 else 'delta'}. Time consumed in I/O operation is {end_time - start_time}")
-
         # Save the checkpoint.
+        start_IO_time = time.time()
         ensure_directory_exists(checkpoint_name)
         torch.save(state_dict, checkpoint_name)
+        end_IO_time = time.time()
+        print(f"Save style is {'base' if delta_count == 0 else 'delta'}. Time consumed in I/O operation is {end_IO_time - start_IO_time}")
 
     # Wait so everyone is done (necessary)
     if torch.distributed.is_initialized():
@@ -654,7 +656,6 @@ def load_checkpoint(model, optimizer, opt_param_scheduler, load_arg='load', stri
     load_dir = getattr(args, load_arg)
 
     model = unwrap_model(model)
-
     iteration, checkpoint_type = _get_latest_iteration_and_type(load_dir)
     
     if checkpoint_type == "base":
@@ -668,6 +669,7 @@ def load_checkpoint(model, optimizer, opt_param_scheduler, load_arg='load', stri
         #load the delta checkpoint and apply it on the base
         delta_checkpoint_name = get_checkpoint_name(load_dir, iteration)
         delta_state_dict = torch.load(delta_checkpoint_name, map_location='cpu')
+        print(f"loading the delta checkpoint from {delta_checkpoint_name}, the base iteration is {base_iteration}")
         state_dict['model'] = reconstruct_checkpoint_with_bitmask(state_dict['model'], delta_state_dict['model'])
         release = False
     else:

@@ -2,7 +2,7 @@
 
 DIRECTORY="/mnt/pengyanxin/my_megatron/examples/gpt3/gpt2_345m"
 INTERVAL=60  # Check every 60 seconds
-MIN_CHECKPOINTS=6  # Minimum number of checkpoints to keep
+MIN_CHECKPOINTS=10  # Minimum number of checkpoints to keep
 
 remove_oldest_checkpoint() {
     while true; do
@@ -37,4 +37,4 @@ remove_oldest_checkpoint() {
 }
 
 # Run the function in the background
-remove_oldest_checkpoint &
+remove_oldest_checkpoint
