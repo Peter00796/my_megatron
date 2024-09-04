@@ -16,6 +16,8 @@ from .utils import (unwrap_model,
                     print_rank_0)
 from scipy.sparse import csr_matrix
 from .sparse_utils import generate_bitmask, generate_sparse_delta_with_bitmask, reconstruct_checkpoint_with_bitmask, model_diff
+from .briar_quant.clusterer import Clusterer
+from .briar_quant.quantizer import Int8BlockwiseQuantizer
 # from ...adamint8bit.kmeans_experiment.exp_w.clusterer import Clusterer
 # from ...adamint8bit.kmeans_experiment.exp_w.quantizer import Quantizer, FP16Quantizer, Int8BlockwiseQuantizer, Int8DynamicQuantizer, Int8NaiveQuantizer
 
@@ -304,7 +306,25 @@ def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
         # Optimizer stuff.
         if not args.no_save_optim:
             if optimizer is not None:
+                # define the cluster and quantizer 
+                start_cluster_time = time.time()
+                clusterer = Clusterer()
+                optimizer_state_dict = optimizer.state_dict()['optimizer']['state']
+                clustered_optim, original_shapes = clusterer.cluster_optimizer_states(optimizer_state_dict, 10)
+                end_cluster_time = time.time()
+                print(f"time consumed in clustering is {end_cluster_time - start_cluster_time}")
+                start_quantize_time = time.time()
+                quantizer = Int8BlockwiseQuantizer()
+                quantized_optim = quantizer.quantize_all(clustered_optim)
+                # we first give the original optimizer state to the state_dict, then we replace it with the quantized optimizer state
+                end_quantize_time = time.time()
+                print(f"time consumed in quantization is {end_quantize_time - start_quantize_time}")
                 state_dict['optimizer'] = optimizer.state_dict()
+                state_dict['optimizer']['optimizer']['state'] = {
+                    'quantized_optim': quantized_optim,
+                    'original_shapes': original_shapes
+                }
+                # state_dict['optimizer'] = optimizer.state_dict()
             if opt_param_scheduler is not None:
                 state_dict['opt_param_scheduler'] = \
                     opt_param_scheduler.state_dict()
@@ -379,7 +399,6 @@ def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
                     f.write("delta")
                 delta_encode_end = time.time()
                 print(f"Time consumed in delta encoding is {delta_encode_end - delta_encode_start}")
-                
             else:
                 print(f"the base model does not exist, saving the normal base checkpoint")
                 latest_base_iteration = iteration
@@ -740,7 +759,17 @@ def load_checkpoint(model, optimizer, opt_param_scheduler, load_arg='load', stri
         try:
             # Load state dict.
             if optimizer is not None:
-                optimizer.load_state_dict(state_dict['optimizer'])
+                if 'quantized_optim' in state_dict['optimizer'] and 'original_shapes' in state_dict['optimizer']:
+                    dequantize_start_time = time.time()
+                    quantized_optim = state_dict['optimizer']['optimizer']['state']['quantized_optim']
+                    original_shapes = state_dict['optimizer']['optimizer']['state']['original_shapes']
+                    quantizer = Int8BlockwiseQuantizer()
+                    dequantized_optim = quantizer.dequantize_all(quantized_optim, original_shapes)
+                    dequantize_end_time = time.time()
+                    print(f"time consumed in dequantizing is {dequantize_end_time - dequantize_start_time}")
+                    optimizer.load_state_dict(dequantized_optim)
+                else:
+                    optimizer.load_state_dict(state_dict['optimizer'])
 
             # Load distributed optimizer's custom parameter state.
             if args.use_distributed_optimizer:

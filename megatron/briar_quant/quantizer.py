@@ -1,4 +1,4 @@
-from util import *
+from .util import *
 from abc import ABC, abstractmethod
 import torch
 import torch

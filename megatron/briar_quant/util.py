@@ -4,8 +4,6 @@ import numpy as np
 from scipy import stats
 import matplotlib.pyplot as plt
 
-
-
 # checkpoint related
 def get_adam1_from_storage(path):
     optimizer = torch.load(path)
@@ -15,8 +13,6 @@ def get_adam2_from_storage(path):
     optimizer = torch.load(path)
     return optimizer[0][0][0]['exp_avg_sq']
 
-
-    
 def create_dynamic_map(signed=True):
     if signed:
         # For signed integers (range -128 to 127)
