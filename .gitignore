@@ -16,3 +16,4 @@ llama-2-7b-finetune/
 tensorboard/
 examples/gpt3/gpt-345m-ckpts/
 examples/gpt3/gpt2_345m/
+examples/gpt3/gpt_345m_dp/

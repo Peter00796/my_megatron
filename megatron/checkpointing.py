@@ -651,8 +651,11 @@ def _get_latest_iteration_and_type(load_dir):
     iteration, _ = read_metadata(tracker_filename)
     checkpoint_dir = os.path.join(load_dir, 'iter_{:07d}'.format(iteration))
     type_path = os.path.join(checkpoint_dir, "type.txt")
-    with open(type_path, "r") as f:
-        checkpoint_type = f.read().strip()
+    if not os.path.exists(type_path):
+        return iteration, "release"
+    else:
+        with open(type_path, "r") as f:
+            checkpoint_type = f.read().strip()
         
     return iteration, checkpoint_type
 
@@ -675,9 +678,10 @@ def load_checkpoint(model, optimizer, opt_param_scheduler, load_arg='load', stri
     load_dir = getattr(args, load_arg)
 
     model = unwrap_model(model)
+
     iteration, checkpoint_type = _get_latest_iteration_and_type(load_dir)
     
-    if checkpoint_type == "base":
+    if checkpoint_type == "base" or checkpoint_type == "release":
         state_dict, checkpoint_name, release = _load_base_checkpoint(load_dir, rank0=False)
     elif checkpoint_type == "delta":
         # load base checkpoint first
