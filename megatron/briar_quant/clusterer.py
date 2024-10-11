@@ -47,37 +47,58 @@ class Clusterer:
     def naive_normal_clusters(cls, input_tensor, interval_number):
         """
         Cluster the input tensor based on the normal distribution
+        Return clusters, cluster labels, and original shapes.
         """
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         input_tensor = input_tensor.to(device)
         input_tensor = cls.pre_process_data(input_tensor)
-        mean, std_dev = cls.calculate_mean_and_stddev(input_tensor)
-        intervals = cls.divide_into_intervals(interval_number, mean, std_dev).to(device)
-        clusters = cls.assign_to_clusters(input_tensor, intervals)
-        return clusters
+        data = input_tensor.flatten()
+        mean, std_dev = data.mean(), data.std(unbiased=True)
+        
+        # Compute intervals on the same device as data
+        intervals = torch.linspace(0, 1, interval_number + 1, device=data.device)
+        intervals = torch.distributions.Normal(mean, std_dev).icdf(intervals)
+        
+        # Assign data to clusters
+        cluster_labels = torch.bucketize(data, intervals)
+        cluster_labels = torch.clamp(cluster_labels - 1, min=0, max=interval_number - 1)
+        clusters = []
+        
+        for i in range(interval_number):
+            cluster_data = data[cluster_labels == i]
+            clusters.append(cluster_data)
+            
+        return clusters, cluster_labels, data.shape
+            
+        
+        
+        
+
     
     @classmethod
     def cluster_optimizer_states(cls, optimizer_states, interval_number):
         """
-        Input of this function is the optimizer states dictionary
-        This function receives the optimizer states dictionary and clusters the tensors in the optimizer states
-        This function returns the clustered states and the original shapes of the tensors
+        This function cluster the optimzier states and store cluster lebles and original shapes
         """
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         clustered_states = {}
+        cluster_labels_states = {}
         original_shapes = {}
         for key in optimizer_states:
             optimizer_state_dict = optimizer_states[key]
             clustered_state = {}
+            cluster_labels_state = {}
             shape_dict = {}
             for state_key in optimizer_state_dict:
                 tensor = optimizer_state_dict[state_key].to(device)
-                clusters = cls.naive_normal_clusters(tensor, interval_number)
+                clusters, cluster_labels, original_shape = cls.naive_normal_clusters(tensor, interval_number)
                 clustered_state[state_key] = clusters
-                shape_dict[state_key] = tensor.shape
+                cluster_labels_state[state_key] = cluster_labels
+                shape_dict[state_key] = original_shape
             clustered_states[key] = clustered_state
+            cluster_labels_states[key] = cluster_labels_state
             original_shapes[key] = shape_dict
-        return clustered_states, original_shapes
+        return clustered_states, cluster_labels_states, original_shapes
     
 
 
@@ -98,7 +119,7 @@ class Clusterer:
         return flat_tensor.view(original_shape)
     
     @classmethod
-    def de_cluster_optimizer_states(cls, clustered_states, original_shapes):
+    def de_cluster_optimizer_states(cls, clustered_states, cluster_labels_states, original_shapes):
         """
         Input of this function is the clustered states dictionary and the original shapes dictionary (both saved on disk)
         This function receives the clustered states dictionary and the original shapes dictionary and de-clusters the tensors in the optimizer states
@@ -107,12 +128,17 @@ class Clusterer:
         de_clustered_states = {}
         for key in clustered_states:
             clustered_state_dict = clustered_states[key]
+            cluster_labels_state = cluster_labels_states[key]
             de_clustered_state = {}
             for state_key in clustered_state_dict:
                 clusters = clustered_state_dict[state_key]
-                flat_tensor = cls.flatten_clusters(clusters)
+                cluster_labels = cluster_labels_state[state_key]
                 original_shape = original_shapes[key][state_key]
-                de_clustered_tensor = cls.reshape_tensor(flat_tensor, original_shape)
+                
+                data = torch.empty(cluster_labels.size(0), device=cluster_labels.device)
+                for i, cluster in enumerate(clusters):
+                    data[cluster_labels == i] = cluster
+                de_clustered_tensor = data.view(original_shape)
                 de_clustered_state[state_key] = de_clustered_tensor
             de_clustered_states[key] = de_clustered_state
         return de_clustered_states

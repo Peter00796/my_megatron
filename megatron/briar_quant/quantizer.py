@@ -1,7 +1,6 @@
 from .util import *
 from abc import ABC, abstractmethod
 import torch
-import torch
 from abc import ABC, abstractmethod
 
 class Quantizer(ABC):
@@ -108,7 +107,6 @@ class Int8DynamicQuantizer(Quantizer):
     
     def dequantize_cluster(self, quantized_data, min_val, scale_factor, signed=True):
         qmap = self.qmap_signed if signed else self.qmap_unsigned
-        print(quantized_data.dtype)
         quantized_data = quantized_data.to(torch.int64)
         dequantized_data = qmap[quantized_data + 128] if signed else qmap[quantized_data]
         dequantized_data = 0.5 * (dequantized_data + 1) * scale_factor + min_val if signed else dequantized_data * scale_factor + min_val
