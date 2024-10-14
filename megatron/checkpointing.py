@@ -18,6 +18,7 @@ from scipy.sparse import csr_matrix
 from .sparse_utils import generate_bitmask, generate_sparse_delta_with_bitmask, reconstruct_checkpoint_with_bitmask, model_diff
 from .briar_quant.clusterer import Clusterer
 from .briar_quant.quantizer import Int8BlockwiseQuantizer
+from .briar_quant.non_cluster_quant import DynamicBlockwiseQuantizer,  dequantize_optimizer_state, quantize_optimizer_state
 # from ...adamint8bit.kmeans_experiment.exp_w.clusterer import Clusterer
 # from ...adamint8bit.kmeans_experiment.exp_w.quantizer import Quantizer, FP16Quantizer, Int8BlockwiseQuantizer, Int8DynamicQuantizer, Int8NaiveQuantizer
 
@@ -285,6 +286,8 @@ def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
         ensure_directory_exists(optim_checkpoint_name)
         optimizer.save_parameter_state(optim_checkpoint_name)
 
+        # finished quantization, now we need to store the quantized optimizer state
+        
     # Collect args, model, RNG.
     if not torch.distributed.is_initialized() \
             or mpu.get_data_modulo_expert_parallel_rank() == 0:
@@ -303,28 +306,68 @@ def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
                 state_dict['model%d' % i] = \
                     model[i].state_dict_for_save_checkpoint()
 
-        # Optimizer stuff.
+
         if not args.no_save_optim:
             if optimizer is not None:
-                # define the cluster and quantizer 
-                start_cluster_time = time.time()
+                state_dict['optimizer'] = optimizer.state_dict()    
+                
+                print("Starting clustering and quantization...")
+                start_time = time.time()
+                
+                # Cluster the optimizer states
                 clusterer = Clusterer()
-                optimizer_state_dict = optimizer.state_dict()['optimizer']['state']
-                clustered_optim, original_shapes = clusterer.cluster_optimizer_states(optimizer_state_dict, 10)
-                end_cluster_time = time.time()
-                print(f"time consumed in clustering is {end_cluster_time - start_cluster_time}")
-                start_quantize_time = time.time()
+
+                def print_keys(d, parent_key=''):
+                    for k, v in d.items():
+                        full_key = f"{parent_key}.{k}" if parent_key else k
+                        if isinstance(v, dict):
+                            print_keys(v, full_key)
+                        else:
+                            print(full_key)
+
+                print("Optimizer state_dict keys:")
+                print_keys(state_dict['optimizer'])
+                optimizer_state = state_dict['optimizer']['optimizer']['state']
+                clustered_states, cluster_labels_states, original_shapes = clusterer.cluster_optimizer_states(optimizer_state, 10)
+                
+                # Quantize the clustered states
                 quantizer = Int8BlockwiseQuantizer()
-                quantized_optim = quantizer.quantize_all(clustered_optim)
-                # we first give the original optimizer state to the state_dict, then we replace it with the quantized optimizer state
-                end_quantize_time = time.time()
-                print(f"time consumed in quantization is {end_quantize_time - start_quantize_time}")
-                state_dict['optimizer'] = optimizer.state_dict()
+                quantized_optimizer_state = quantizer.quantize_all(clustered_states)
+                
+                end_time = time.time()
+                print(f"Time consumed in clustering and quantization: {end_time - start_time}")
+
+
+                def print_keys(d, parent_key=''):
+                    for k, v in d.items():
+                        full_key = f"{parent_key}.{k}" if parent_key else k
+                        if isinstance(v, dict):
+                            print_keys(v, full_key)
+                        else:
+                            print(full_key)
+
+                print("Optimizer state_dict keys:")
+
+
                 state_dict['optimizer']['optimizer']['state'] = {
-                    'quantized_optim': quantized_optim,
-                    'original_shapes': original_shapes
-                }
-                # state_dict['optimizer'] = optimizer.state_dict()
+                    'quantized_optimizer_state' : quantized_optimizer_state,
+                    'original_shapes' : original_shapes,
+                    'cluster_labels' : cluster_labels_states
+                }   
+                # state_dict['optimizer']['optimizer']['state'] = {
+                #     'optimizer_state_dict' : quantized_optimizer_state,
+                #     'original_shapes' : original_shapes,
+                #     'cluster_labels' : cluster_labels_states
+                # }
+                # state_dict['optimizer'] = {
+                #     'optimizer': {
+                #         'state': quantized_optimizer_state,
+                #         'param_groups': optimizer_state_dict['optimizer']['param_groups']
+                #     },
+                #     'cluster_labels': cluster_labels_states,
+                #     'original_shapes': original_shapes
+                # }
+
             if opt_param_scheduler is not None:
                 state_dict['opt_param_scheduler'] = \
                     opt_param_scheduler.state_dict()
@@ -338,7 +381,7 @@ def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
         
         latest_base_iteration = 0
         delta_count = 0
-        
+            
         # if the file exists here, then we go and fetch the latest_base_iteration and delta_count
         if os.path.exists(latest_info_path):
             with open(latest_info_path, 'r') as f:
@@ -405,13 +448,6 @@ def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
                 delta_count = 0
                 with open(meta_path, "w") as f:
                     f.write("base")
-
-
-        with open(latest_info_path, "w") as f: 
-            f.write(f"{iteration}\n")
-            f.write(f"{latest_base_iteration}\n")
-            f.write(f"{delta_count}\n")
-
         # Save the checkpoint.
         start_IO_time = time.time()
         ensure_directory_exists(checkpoint_name)
@@ -432,6 +468,10 @@ def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
         tracker_filename = get_checkpoint_tracker_filename(args.save)
         with open(tracker_filename, 'w') as f:
             f.write(str(iteration))
+        with open(latest_info_path, "w") as f: 
+            f.write(f"{iteration}\n")
+            f.write(f"{latest_base_iteration}\n")
+            f.write(f"{delta_count}\n")
 
     # Wait so everyone is done (not necessary)
     if torch.distributed.is_initialized():
@@ -678,12 +718,19 @@ def load_checkpoint(model, optimizer, opt_param_scheduler, load_arg='load', stri
     load_dir = getattr(args, load_arg)
 
     model = unwrap_model(model)
-
+    # first use the _load_base_checkpoint to load the most recent checkpoint (regardeless it is a base checkpoint or delta checkpoint   )
+    state_dict, checkpoint_name, release = _load_base_checkpoint(load_dir, rank0=False)
+    # if the state_dict is None, then we need to load the base checkpoint   
+    if state_dict is None:
+        print_rank_0(f"checkpoint not found in {load_dir}, start from random")
+        return 0, 0
     iteration, checkpoint_type = _get_latest_iteration_and_type(load_dir)
     
-    if checkpoint_type == "base" or checkpoint_type == "release":
-        state_dict, checkpoint_name, release = _load_base_checkpoint(load_dir, rank0=False)
-    elif checkpoint_type == "delta":
+    # Check if the checkpoint is a delta checkpoint
+    # If it is a delta checkpoint, then we need to load the base checkpoint first
+    # then apply the delta checkpoint on the base checkpoint
+    # If it is a base checkpoint, then we directly load it (we do not need to do anything)
+    if checkpoint_type == "delta":
         # load base checkpoint first
         base_iteration = _get_base_info(load_dir)
         base_checkpoint_name = get_checkpoint_name(load_dir,base_iteration)
@@ -695,13 +742,10 @@ def load_checkpoint(model, optimizer, opt_param_scheduler, load_arg='load', stri
         print(f"loading the delta checkpoint from {delta_checkpoint_name}, the base iteration is {base_iteration}")
         state_dict['model'] = reconstruct_checkpoint_with_bitmask(state_dict['model'], delta_state_dict['model'])
         release = False
-    else:
-        print(f"Unknown checkpoint type {checkpoint_type}, existing")
-        sys.exit()
 
     # Checkpoint not loaded.
     if state_dict is None:
-
+        
         # Conditionally exit at this point.
         if args.exit_on_missing_checkpoint:
             print_rank_0(">> '--exit-on-missing-checkpoint' set ... exiting. <<")
@@ -761,17 +805,36 @@ def load_checkpoint(model, optimizer, opt_param_scheduler, load_arg='load', stri
     # Optimizer.
     if not release and not args.finetune and not args.no_load_optim:
         try:
-            # Load state dict.
             if optimizer is not None:
-                if 'quantized_optim' in state_dict['optimizer'] and 'original_shapes' in state_dict['optimizer']:
-                    dequantize_start_time = time.time()
-                    quantized_optim = state_dict['optimizer']['optimizer']['state']['quantized_optim']
+                if 'optimizer' in state_dict and 'optimizer' in state_dict['optimizer']:
+                    print_rank_0("Loading optimizer state")
+                    quantized_optimizer_state = state_dict['optimizer']['optimizer']['state']['quantized_optimizer_state']
+                    cluster_labels_states = state_dict['optimizer']['optimizer']['state']['cluster_labels']
                     original_shapes = state_dict['optimizer']['optimizer']['state']['original_shapes']
+
+                    print_rank_0("Start dequantization and de-clustering process")
+                    dequantize_start_time = time.time()
+                    
+                    # Dequantize the optimizer state
+                    print_rank_0("Dequantizing optimizer state")
                     quantizer = Int8BlockwiseQuantizer()
-                    dequantized_optim = quantizer.dequantize_all(quantized_optim, original_shapes)
+                    dequantized_clustered_state = quantizer.dequantize_all(quantized_optimizer_state)
+                    print_rank_0("Dequantization complete")
+                    
+                    # De-cluster the optimizer state
+                    print_rank_0("De-clustering optimizer state")
+                    clusterer = Clusterer()
+                    dequantized_optimizer_state = clusterer.de_cluster_optimizer_states(dequantized_clustered_state, cluster_labels_states, original_shapes)
+                    print_rank_0("De-clustering complete")
+                    
                     dequantize_end_time = time.time()
-                    print(f"time consumed in dequantizing is {dequantize_end_time - dequantize_start_time}")
-                    optimizer.load_state_dict(dequantized_optim)
+                    print_rank_0(f"Time consumed in dequantizing and de-clustering: {dequantize_end_time - dequantize_start_time:.2f} seconds")
+                    
+                    print_rank_0("Loading dequantized and de-clustered state into optimizer")
+
+                    
+                    optimizer.load_state_dict(state_dict['optimizer'])
+                    print_rank_0("Optimizer state loaded successfully")
                 else:
                     optimizer.load_state_dict(state_dict['optimizer'])
 
@@ -792,12 +855,11 @@ def load_checkpoint(model, optimizer, opt_param_scheduler, load_arg='load', stri
                     opt_param_scheduler.load_state_dict(state_dict['lr_scheduler'])
                 else:
                     opt_param_scheduler.load_state_dict(state_dict['opt_param_scheduler'])
-        except KeyError:
-            print_rank_0('Unable to load optimizer from checkpoint {}. '
-                         'Specify --no-load-optim or --finetune to prevent '
-                         'attempting to load the optimizer state, '
-                         'exiting ...'.format(checkpoint_name))
-            sys.exit()
+        except Exception as e:
+            print_rank_0(f"Error during optimizer state loading: {str(e)}")
+            import traceback
+            traceback.print_exc()
+            raise
     else:
         if (args.fp16 or args.bf16) and optimizer is not None:
             optimizer.reload_model_params()

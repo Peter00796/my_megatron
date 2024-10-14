@@ -2,9 +2,38 @@ import torch
 import numpy as np
 from scipy import stats
 import cupy as cp
+import time
 
 class Clusterer:
 
+
+    @classmethod
+    def deterministic_clusters(cls, data, num_clusters):
+        # Ensure data is on the correct device
+        device = data.device
+        # Flatten data
+        data = data.flatten()
+        # Initialize cluster centers deterministically
+        min_val, max_val = data.min(), data.max()
+        cluster_centers = torch.linspace(min_val, max_val, steps=num_clusters, device=device)
+        
+        # Perform a fixed number of K-Means iterations
+        for _ in range(10):  # Fixed number of iterations
+            # Assign points to nearest cluster center
+            distances = torch.abs(data.unsqueeze(1) - cluster_centers.unsqueeze(0))
+            cluster_assignments = distances.argmin(dim=1)
+            # Update cluster centers
+            for i in range(num_clusters):
+                mask = cluster_assignments == i
+                if mask.any():
+                    cluster_centers[i] = data[mask].mean()
+                else:
+                    # Handle empty clusters if necessary
+                    pass
+        # Compute quantization thresholds
+        thresholds = (cluster_centers[:-1] + cluster_centers[1:]) / 2
+        return cluster_centers, thresholds
+    
     @staticmethod
     def pre_process_data(data):
         """
@@ -47,28 +76,35 @@ class Clusterer:
     def naive_normal_clusters(cls, input_tensor, interval_number):
         """
         Cluster the input tensor based on the normal distribution
-        Return clusters, cluster labels, and original shapes.
+        Return cluster centers, cluster labels, and original shape.
         """
+        print(f"input_tensor shape: {input_tensor.shape}")
+        original_shape = input_tensor.shape
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         input_tensor = input_tensor.to(device)
-        input_tensor = cls.pre_process_data(input_tensor)
         data = input_tensor.flatten()
-        mean, std_dev = data.mean(), data.std(unbiased=True)
         
-        # Compute intervals on the same device as data
-        intervals = torch.linspace(0, 1, interval_number + 1, device=data.device)
-        intervals = torch.distributions.Normal(mean, std_dev).icdf(intervals)
+        # Ensure interval_number is reasonable
+        interval_number = min(interval_number, data.numel() // 100)  # At least 100 elements per cluster on average
+        
+        # Compute min and max values
+        min_val, max_val = data.min(), data.max()
+        
+        # Create evenly spaced cluster centers
+        cluster_centers = torch.linspace(min_val, max_val, steps=interval_number, device=device)
         
         # Assign data to clusters
-        cluster_labels = torch.bucketize(data, intervals)
-        cluster_labels = torch.clamp(cluster_labels - 1, min=0, max=interval_number - 1)
-        clusters = []
+        distances = torch.abs(data.unsqueeze(1) - cluster_centers.unsqueeze(0))
+        cluster_labels = distances.argmin(dim=1)
+
         
+        # Update cluster centers based on assigned data
         for i in range(interval_number):
-            cluster_data = data[cluster_labels == i]
-            clusters.append(cluster_data)
-            
-        return clusters, cluster_labels, data.shape
+            mask = cluster_labels == i
+            if mask.any():
+                cluster_centers[i] = data[mask].mean()
+        
+        return cluster_centers, cluster_labels, original_shape
             
         
         
@@ -84,6 +120,7 @@ class Clusterer:
         clustered_states = {}
         cluster_labels_states = {}
         original_shapes = {}
+        # initialize the clustered_states, cluster_labels_states, original_shapes   
         for key in optimizer_states:
             optimizer_state_dict = optimizer_states[key]
             clustered_state = {}
@@ -93,7 +130,7 @@ class Clusterer:
                 tensor = optimizer_state_dict[state_key].to(device)
                 clusters, cluster_labels, original_shape = cls.naive_normal_clusters(tensor, interval_number)
                 clustered_state[state_key] = clusters
-                cluster_labels_state[state_key] = cluster_labels
+                cluster_labels_state[state_key] = cluster_labels.to(torch.uint8)
                 shape_dict[state_key] = original_shape
             clustered_states[key] = clustered_state
             cluster_labels_states[key] = cluster_labels_state
@@ -121,24 +158,24 @@ class Clusterer:
     @classmethod
     def de_cluster_optimizer_states(cls, clustered_states, cluster_labels_states, original_shapes):
         """
-        Input of this function is the clustered states dictionary and the original shapes dictionary (both saved on disk)
-        This function receives the clustered states dictionary and the original shapes dictionary and de-clusters the tensors in the optimizer states
-        This function returns the de-clustered states
+        De-clusters the tensors in the optimizer states
         """
         de_clustered_states = {}
         for key in clustered_states:
             clustered_state_dict = clustered_states[key]
             cluster_labels_state = cluster_labels_states[key]
             de_clustered_state = {}
-            for state_key in clustered_state_dict:
-                clusters = clustered_state_dict[state_key]
+            for state_key, clusters in clustered_state_dict.items():
                 cluster_labels = cluster_labels_state[state_key]
                 original_shape = original_shapes[key][state_key]
                 
-                data = torch.empty(cluster_labels.size(0), device=cluster_labels.device)
+                data = torch.empty(cluster_labels.numel(), device=cluster_labels.device)
                 for i, cluster in enumerate(clusters):
-                    data[cluster_labels == i] = cluster
+                    if cluster.numel() > 0:
+                        mask = cluster_labels == i
+                        data[mask] = cluster
                 de_clustered_tensor = data.view(original_shape)
                 de_clustered_state[state_key] = de_clustered_tensor
             de_clustered_states[key] = de_clustered_state
         return de_clustered_states
+
