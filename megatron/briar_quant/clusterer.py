@@ -127,7 +127,10 @@ class Clusterer:
             cluster_labels_state = {}
             shape_dict = {}
             for state_key in optimizer_state_dict:
+                print(f"state_key: {state_key}")   
+                print(f"optimizer_state_dict[state_key]: {optimizer_state_dict[state_key]}")
                 tensor = optimizer_state_dict[state_key].to(device)
+                
                 clusters, cluster_labels, original_shape = cls.naive_normal_clusters(tensor, interval_number)
                 clustered_state[state_key] = clusters
                 cluster_labels_state[state_key] = cluster_labels.to(torch.uint8)

@@ -325,8 +325,6 @@ def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
                         else:
                             print(full_key)
 
-                print("Optimizer state_dict keys:")
-                print_keys(state_dict['optimizer'])
                 optimizer_state = state_dict['optimizer']['optimizer']['state']
                 clustered_states, cluster_labels_states, original_shapes = clusterer.cluster_optimizer_states(optimizer_state, 10)
                 
@@ -353,20 +351,7 @@ def save_checkpoint(iteration, model, optimizer, opt_param_scheduler,
                     'quantized_optimizer_state' : quantized_optimizer_state,
                     'original_shapes' : original_shapes,
                     'cluster_labels' : cluster_labels_states
-                }   
-                # state_dict['optimizer']['optimizer']['state'] = {
-                #     'optimizer_state_dict' : quantized_optimizer_state,
-                #     'original_shapes' : original_shapes,
-                #     'cluster_labels' : cluster_labels_states
-                # }
-                # state_dict['optimizer'] = {
-                #     'optimizer': {
-                #         'state': quantized_optimizer_state,
-                #         'param_groups': optimizer_state_dict['optimizer']['param_groups']
-                #     },
-                #     'cluster_labels': cluster_labels_states,
-                #     'original_shapes': original_shapes
-                # }
+                }
 
             if opt_param_scheduler is not None:
                 state_dict['opt_param_scheduler'] = \
@@ -832,6 +817,10 @@ def load_checkpoint(model, optimizer, opt_param_scheduler, load_arg='load', stri
                     
                     print_rank_0("Loading dequantized and de-clustered state into optimizer")
 
+                    
+                    
+                    state_dict['optimizer']['optimizer']['state'] = dequantized_optimizer_state     
+                    print(f"new_optimzier_state_dict: {state_dict['optimizer']['optimizer']['state']}")    
                     
                     optimizer.load_state_dict(state_dict['optimizer'])
                     print_rank_0("Optimizer state loaded successfully")
